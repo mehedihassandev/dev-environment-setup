@@ -1,21 +1,16 @@
-# gitconfig aliases
-	b = branch
-	a = add .
-	c = commit
-	pl = pull
-	pu = push
-	co = checkout
-	m = merge
-	ss = stash save
-	sl = stash list
-	sp = stash pop
-	# Colored log
-	lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
-	ls = log --pretty=format:"%C(yellow)%h\\ %C(green)%ad%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --date=short --graph
+if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+fi
 
+export ZSH="$HOME/.oh-my-zsh"
 
+ZSH_THEME="half-life"
 
-## zsh aliases ##
+DEFAULT_USER=$USER
+
+plugins=(git zsh-autosuggestions history web-search copybuffer dirhistory zsh-syntax-highlighting)
+
+source $ZSH/oh-my-zsh.sh
 
 # git aliases
 alias g="git"
@@ -51,7 +46,7 @@ alias	glg="git log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d
 alias	lg="log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"
 
 
-# Custom aliases
+# Common aliases
 alias cl="clear"
 alias yk="yarn kill"
 alias ysp="yarn start pos"
@@ -61,3 +56,5 @@ alias ns="npm start"
 alias ni="npm install"
 alias nrd="npm run dev"
 alias c="code ."
+alias s="sudo"
+
