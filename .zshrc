@@ -57,4 +57,6 @@ alias ni="npm install"
 alias nrd="npm run dev"
 alias c="code ."
 alias s="sudo"
-
+alias t="tmux"
+alias tk="tmux kill-session -t"
+alias tn="tmux new -s"
