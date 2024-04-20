@@ -21,6 +21,9 @@ alias a="add"
 alias gcm="git commit -m"
 alias c="commit"
 alias cm="commit -m"
+alias b="branch"
+alias gbd="branch -d"
+alias gbD="branch -D"
 alias gpl="git pull"
 alias pl="pull"
 alias gpu="git push"
@@ -44,6 +47,7 @@ alias ue="user.email"
 alias cue="config user.email"
 alias	glg="git log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"
 alias	lg="log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"
+alias grlg="git reflog"
 
 
 # Common aliases
