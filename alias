@@ -19,6 +19,7 @@
 
 # git aliases
 alias g="git"
+alias gs="git status"
 alias cg="config"
 alias ga="git add ."
 alias a="add"
