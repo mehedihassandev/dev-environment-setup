@@ -1,4 +1,4 @@
-[alias]
+# gitconfig aliases
 	b = branch
 	a = add .
 	c = commit
@@ -12,3 +12,34 @@
 	# Colored log
 	lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
 	ls = log --pretty=format:"%C(yellow)%h\\ %C(green)%ad%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --date=short --graph
+
+
+
+## zsh aliases ##
+
+# git aliases
+alias g="git"
+alias ga="git add ."
+alias gcm="git commit -m"
+alias gpl="git pull"
+alias gp="git push"
+alias gm="git merge"
+alias gco="git checkout"
+alias	gss="git stash save"
+alias gsl="git stash list"
+alias	gsp="git stash pop"
+alias gcun="git config user.name"
+alias gcue="git config user.email"
+alias	lg="log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"
+
+# Custom aliases
+alias cl="clear"
+alias yk="yarn kill"
+alias ysp="yarn start pos"
+alias yi="yarn install"
+alias n="npm"
+alias ns="npm start"
+alias ni="npm install"
+alias nrd="npm run dev"
+alias c="code ."
+
