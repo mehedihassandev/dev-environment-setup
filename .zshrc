@@ -4,7 +4,7 @@ fi
 
 export ZSH="$HOME/.oh-my-zsh"
 
-ZSH_THEME="half-life"
+ZSH_THEME="powerlavel10k/powerlevel10k"
 
 DEFAULT_USER=$USER
 
@@ -47,7 +47,14 @@ alias ue="user.email"
 alias cue="config user.email"
 alias	glg="git log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"
 alias	lg="log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"
-alias grlg="git reflog"
+alias gwa="git worktree add"
+alias wa="worktree add"
+alias gwr="git worktree remove"
+alias wr="worktree remove"
+alias gwl="git worktree list"
+alias wl="worktree list"
+alias gwp="git worktree prune"
+alias wp="worktree prune"
 
 
 # Common aliases
