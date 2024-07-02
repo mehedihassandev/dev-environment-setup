@@ -1,9 +1,10 @@
 {
   // editor
-  "editor.fontSize": 15,
-  "editor.fontFamily": "Fira Code, Operator Mono",
+  "editor.fontSize": 17,
+  "editor.fontFamily": "Cascadia Code, Fira Code, Operator Mono",
   "editor.fontLigatures": true,
   "editor.wordWrap": "on",
+  "editor.minimap.autohide": true,
   "editor.tokenColorCustomizations": {
     "textMateRules": [
       {
@@ -14,9 +15,28 @@
       }
     ]
   },
+
+  // icon theme
+  "workbench.iconTheme": "vscode-icons",
+
+  // window settings
+  "window.zoomLevel": 0,
+  "window.menuBarVisibility": "visible",
+  "window.customTitleBarVisibility": "auto",
+  "window.titleBarStyle": "custom",
+  "window.title": "${activeEditorMedium}${separator}${rootName}",
+  "workbench.activityBar.location": "top",
+
+  // github settings
+  "github.copilot.editor.enableAutoCompletions": true,
+  "git.openRepositoryInParentFolders": "never",
+
   // cursor
   "editor.cursorSmoothCaretAnimation": "on",
   "editor.cursorBlinking": "expand",
+  "editor.cursorStyle": "line",
+  "editor.cursorWidth": 2,
+
   // config related to code formatting
   "editor.defaultFormatter": "esbenp.prettier-vscode",
   "editor.formatOnSave": true,
@@ -34,19 +54,16 @@
   //   "source.organizeImports": "explicit"
   // },
   "eslint.alwaysShowStatus": true,
-  //terminal
+
+  //terminal settings
   "terminal.integrated.fontSize": 14,
-  "terminal.integrated.fontWeight": "normal",
-  "terminal.integrated.fontFamily": "Fira Code, Operator Mono",
-  "workbench.colorTheme": "GitHub Dark Default",
-  "workbench.iconTheme": "vscode-icons",
+  "terminal.integrated.fontWeight": "bold",
+  "terminal.integrated.fontFamily": "Cascadia Code, Fira Code, Operator Mono",
+  "workbench.colorTheme": "Palenight Theme",
   "terminal.integrated.defaultProfile.windows": "Git Bash",
   "typescript.updateImportsOnFileMove.enabled": "always",
-  "editor.minimap.autohide": true,
   "editor.minimap.renderCharacters": false,
-  "window.zoomLevel": 0,
   "workbench.sideBar.location": "right",
-  "window.menuBarVisibility": "toggle",
   "nxConsole.showNodeVersionOnStartup": false,
   "extensions.experimental.affinity": {
     "asvetliakov.vscode-neovim": 1
@@ -56,7 +73,7 @@
   "githubPullRequests.pullBranch": "never",
   "git.confirmSync": false,
 
-  // Misc
+  // misc config
   "workbench.startupEditor": "none",
   "explorer.compactFolders": false,
   "editor.tabSize": 2,
