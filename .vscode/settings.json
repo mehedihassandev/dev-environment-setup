@@ -2,15 +2,10 @@
   // Open JSON Editor For Settings
   "workbench.settings.editor": "json",
 
-  // Custom CSS and JS Config For VSCode. First Need To Install Extension "Custom CSS and JS Loader"
-  "vscode_custom_css.imports": [
-    "file:///home/m/custom-vscode.css",
-    "file:///home/m/vscode-script.js"
-  ],
-
   // Theme Config
   "workbench.colorTheme": "Palenight Theme",
-  "workbench.iconTheme": "vscode-icons",
+  "workbench.iconTheme": "material-icon-theme",
+  "material-icon-theme.files.color": "#42a5f5",
 
   // Font Config
   "editor.fontFamily": "Cascadia Code, Fira Code, Operator Mono",
@@ -35,6 +30,8 @@
   "workbench.editor.showTabs": "multiple",
   "editor.lineNumbers": "on",
   "workbench.tree.indent": 15,
+  "editor.stickyScroll.enabled": false,
+  "material-icon-theme.saturation": 0,
   "editor.tokenColorCustomizations": {
     "textMateRules": [
       {
@@ -61,14 +58,15 @@
   "editor.minimap.enabled": true,
   "editor.minimap.autohide": true,
   "editor.minimap.renderCharacters": false,
-  "editor.minimap.maxColumn": 250,
+  "editor.minimap.maxColumn": 100,
   "window.commandCenter": false,
   "editor.scrollbar.vertical": "auto",
   "editor.scrollbar.horizontal": "auto",
   "window.titleBarStyle": "custom",
   "window.menuBarVisibility": "toggle",
   "window.customTitleBarVisibility": "auto",
-  "window.title": "${activeEditorMedium}${separator}${rootName}",
+  // "window.title": "${activeEditorMedium}${separator}${rootName}",
+  "window.title": "M O N S T E R",
   "workbench.activityBar.location": "top",
 
   // Github settings
@@ -76,6 +74,7 @@
   "git.openRepositoryInParentFolders": "never",
   "githubPullRequests.pullBranch": "never",
   "git.confirmSync": false,
+  "github.copilot.preferredAccount": "mehedihassan3",
 
   // Cursor
   "editor.cursorSmoothCaretAnimation": "on",
@@ -129,36 +128,9 @@
   "editor.guides.bracketPairs": true,
   "window.zoomLevel": 0,
 
-  // New Misc Config
-  "scm.diffDecorations": "none",
-  "editor.matchBrackets": "never",
-  "workbench.tips.enabled": false,
-  "editor.colorDecorators": false,
-  "git.decorations.enabled": false,
-  "editor.lightbulb.enabled": "off",
-  "editor.selectionHighlight": false,
-  "editor.overviewRulerBorder": false,
-  "editor.renderLineHighlight": "none",
-  "editor.occurrencesHighlight": "off",
-  "problems.decorations.enabled": false,
-  "editor.renderControlCharacters": false,
-  "editor.hideCursorInOverviewRuler": true,
-  "editor.gotoLocation.multipleReferences": "goto",
-  "editor.gotoLocation.multipleDefinitions": "goto",
-  "editor.gotoLocation.multipleDeclarations": "goto",
-  "workbench.editor.enablePreviewFromQuickOpen": false,
-  "editor.gotoLocation.multipleImplementations": "goto",
-  "editor.gotoLocation.multipleTypeDefinitions": "goto",
-
-  "editor.copyWithSyntaxHighlighting": false,
-  "diffEditor.ignoreTrimWhitespace": false,
-  "editor.emptySelectionClipboard": false,
-  "workbench.editor.enablePreview": false,
-  "window.newWindowDimensions": "inherit",
-  "diffEditor.renderSideBySide": false,
-  "editor.snippetSuggestions": "top",
-  "editor.detectIndentation": false,
-  "files.insertFinalNewline": true,
-  "files.trimFinalNewlines": true,
-  "editor.guides.indentation": false
+  // Custom CSS and JS Config For VSCode. First Need To Install Extension "Custom CSS and JS Loader"
+  "vscode_custom_css.imports": [
+    "file:///home/m/custom-vscode.css",
+    "file:///home/m/vscode-script.js"
+  ]
 }

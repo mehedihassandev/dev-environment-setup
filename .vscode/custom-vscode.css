@@ -62,10 +62,10 @@
 }
 
 /* Sidebar top shadow */
-/* .monaco-scrollable-element > .shadow.top {
+.monaco-scrollable-element > .shadow.top {
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.75) !important;
   top: -3px !important;
-} */
+}
 
 /* Sidebar title */
 .composite.title {
@@ -127,8 +127,8 @@
 
 /* Search Label */
 .search-label {
-  font-family: "Geist Mono" !important;
-  font-size: 14px !important;
+  font-family: "Cascadia Code" !important;
+  font-size: 16px !important;
   color: #fff;
   display: block;
 }
@@ -147,9 +147,9 @@
   display: none !important;
 }
 
-.actions-container .menu-entry {
+/* .actions-container .menu-entry {
   display: none !important;
-}
+} */
 
 /* .titlebar-right > * {
   display: none !important;
@@ -180,17 +180,17 @@
   background: none !important;
 }
 
-/* .monaco-list-row.focused {
+.monaco-list-row.focused {
   background-color: rgb(181 198 228 / 25%) !important;
-} */
+}
 
-/* .synthetic-focus {
+.synthetic-focus {
   outline-color: rgba(50, 50, 50, 1) !important;
-} */
+}
 
-/* .quick-input-widget .monaco-label {
+.quick-input-widget .monaco-label {
   font-size: 11px !important;
-} */
+}
 
 /* Command palette text input */
 .quick-input-filter .monaco-inputbox {
@@ -218,10 +218,10 @@
   color: rgba(255, 255, 255, 0.3) !important;
 }
 
-/* .monaco-workbench label {
+.monaco-workbench label {
   color: #fff !important;
   font-size: 14px !important;
-} */
+}
 
 /* Container that holds the VS Code home icon. */
 .editor-group-watermark {
