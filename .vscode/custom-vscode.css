@@ -1,4 +1,4 @@
-/* Code comment style */
+/*********************** Code comment style ***********************/
 .mtk3 {
   font-family: "Cascadia Code" !important;
   color: #008c7d !important;
@@ -18,7 +18,7 @@
   top: -6px !important;
 } */
 
-/* Toolbars when tabs are enabled. */
+/*********************** Toolbars when tabs are enabled. ***********************/
 .monaco-workbench
   .part.editor
   > .content
@@ -28,12 +28,12 @@
   display: none !important;
 }
 
-/* Side bar */
+/*********************** Side bar ***********************/
 .part.sidebar {
   box-shadow: 0px 0px 50px rgba(0, 0, 0, 0.25);
 }
 
-/* File Explorer Selected Item */
+/*********************** File Explorer Selected Item ***********************/
 .monaco-list.list_id_1 .monaco-list-row.selected {
   background-color: #4f5971 !important;
   opacity: 1 !important;
@@ -41,18 +41,18 @@
   border-bottom: 1px #727b90 solid;
 }
 
-/* List item label name */
+/*********************** List item label name ***********************/
 .monaco-list.list_id_1 .monaco-list-row.selected .label-name {
   color: #fff !important;
   opacity: 1 !important;
 }
 
-/* File explorer action buttons */
+/*********************** File explorer action buttons ***********************/
 .monaco-workbench .part.sidebar .title-actions .actions-container {
   display: none;
 }
 
-/* File Explorer Item Label */
+/*********************** File Explorer Item Label ***********************/
 .monaco-tree .monaco-tree-row .label-name,
 .monaco-list .monaco-list-row .monaco-icon-label .label-name {
   font-family: "Cascadia Code" !important;
@@ -61,13 +61,13 @@
   color: #fff !important;
 }
 
-/* Sidebar top shadow */
+/*********************** Sidebar top shadow ***********************/
 .monaco-scrollable-element > .shadow.top {
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.75) !important;
   top: -3px !important;
 }
 
-/* Sidebar title */
+/*********************** Sidebar title ***********************/
 .composite.title {
   display: flex !important;
   flex-direction: row !important;
@@ -81,7 +81,7 @@
   color: #bc9abc !important;
 }
 
-/* Scroll Bar */
+/********************** Scroll Bar **********************/
 .slider {
   position: absolute !important;
   right: 1px !important;
@@ -95,18 +95,18 @@
   display: block !important;
 }
 
-/* Tooltip box style */
+/*********************** Tooltip box style ***********************/
 .monaco-editor-hover,
 .monaco-hover {
   box-shadow: 0px 8px 32px rgba(0, 0, 0, 0.45) !important;
   padding: 10px !important;
   background-image: linear-gradient(#3c3c50 0%, #2a2b38 100%) !important;
   backdrop-filter: blur(3px) !important;
-  border-radius: 20px !important;
+  border-radius: 12px !important;
   border: none !important;
 }
 
-/* Project title's style at the top. */
+/********************** Project title's style at the top. **********************/
 .monaco-workbench
   .part.titlebar
   > .titlebar-container
@@ -118,14 +118,14 @@
   background: transparent !important;
 }
 
-/* Project Title */
+/*********************** Project Title ***********************/
 .titlebar-left {
   justify-content: flex-start !important;
   flex-grow: 0 !important;
   width: auto !important;
 }
 
-/* Search Label */
+/*********************** Search Label ***********************/
 .search-label {
   font-family: "Cascadia Code" !important;
   font-size: 16px !important;
@@ -133,7 +133,7 @@
   display: block;
 }
 
-/* Search icon */
+/*********************** Search icon ***********************/
 .search-icon {
   display: none !important;
 }
@@ -155,7 +155,7 @@
   display: none !important;
 } */
 
-/* Command Palette */
+/********************** Command Palette **********************/
 .quick-input-widget {
   transform: translateY(-50%) !important;
   top: 50% !important;
@@ -163,7 +163,7 @@
   padding: 10px 10px 18px 10px !important;
   background-image: linear-gradient(#3c3c50 0%, #2a2b38 100%) !important;
   backdrop-filter: blur(3px) !important;
-  border-radius: 20px !important;
+  border-radius: 12px !important;
 }
 
 /* Remove background for lists */
@@ -189,17 +189,17 @@
 }
 
 .quick-input-widget .monaco-label {
-  font-size: 11px !important;
+  font-size: 14px !important;
 }
 
 /* Command palette text input */
 .quick-input-filter .monaco-inputbox {
-  border-radius: 12px !important;
+  border-radius: 8px !important;
   padding: 8px !important;
   border: none !important;
   background-color: rgba(34, 34, 34, 0.4) !important;
   font-family: "Cascadia Code" !important;
-  font-size: 14px !important;
+  font-size: 16px !important;
   margin-bottom: 16px !important;
 }
 
@@ -220,7 +220,7 @@
 
 .monaco-workbench label {
   color: #fff !important;
-  font-size: 14px !important;
+  font-size: 16px !important;
 }
 
 /* Container that holds the VS Code home icon. */
