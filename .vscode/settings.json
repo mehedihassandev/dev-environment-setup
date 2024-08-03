@@ -4,7 +4,8 @@
 
   // Theme Config
   "workbench.colorTheme": "Palenight Theme",
-  "workbench.iconTheme": "vscode-icons",
+  "workbench.iconTheme": "material-icon-theme",
+  "material-icon-theme.files.color": "#42a5f5",
 
   // Font Config
   "editor.fontFamily": "Cascadia Code, Fira Code, Operator Mono",
@@ -14,8 +15,10 @@
 
   // Editor
   "workbench.sideBar.location": "right",
+  "workbench.statusBar.visible": false,
   "editor.fontLigatures": true,
   "editor.wordWrap": "on",
+  "editor.wordWrapColumn": 120,
   "explorer.confirmDelete": false,
   "terminal.integrated.defaultProfile.windows": "Git Bash",
   "typescript.updateImportsOnFileMove.enabled": "always",
@@ -24,10 +27,26 @@
     "asvetliakov.vscode-neovim": 1
   },
   "security.promptForLocalFileProtocolHandling": false,
+  "workbench.editor.showTabs": "multiple",
+  "editor.lineNumbers": "on",
+  "workbench.tree.indent": 15,
+  "editor.stickyScroll.enabled": false,
+  "material-icon-theme.saturation": 0,
   "editor.tokenColorCustomizations": {
     "textMateRules": [
       {
-        "scope": "comment",
+        "scope": [
+          "comment",
+          "keyword",
+          "variable.language",
+          "entity.other.attribute-name.html",
+          "entity.other.attribute-name",
+          "keyword.control",
+          "storage.type",
+          "comment",
+          "comment.block",
+          "comment.line"
+        ],
         "settings": {
           "fontStyle": "italic"
         }
@@ -39,13 +58,15 @@
   "editor.minimap.enabled": true,
   "editor.minimap.autohide": true,
   "editor.minimap.renderCharacters": false,
+  "editor.minimap.maxColumn": 100,
   "window.commandCenter": false,
   "editor.scrollbar.vertical": "auto",
   "editor.scrollbar.horizontal": "auto",
   "window.titleBarStyle": "custom",
-  "window.menuBarVisibility": "classic",
+  "window.menuBarVisibility": "toggle",
   "window.customTitleBarVisibility": "auto",
-  "window.title": "${activeEditorMedium}${separator}${rootName}",
+  // "window.title": "${activeEditorMedium}${separator}${rootName}",
+  "window.title": "M O N S T E R",
   "workbench.activityBar.location": "top",
 
   // Github settings
@@ -53,6 +74,7 @@
   "git.openRepositoryInParentFolders": "never",
   "githubPullRequests.pullBranch": "never",
   "git.confirmSync": false,
+  "github.copilot.preferredAccount": "mehedihassan3",
 
   // Cursor
   "editor.cursorSmoothCaretAnimation": "on",
@@ -62,6 +84,7 @@
 
   // Config Related To Code Formatting
   "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "prettier.tabWidth": 4,
   "editor.formatOnSave": true,
   "[javascript]": {
     "editor.formatOnSave": true,
@@ -71,15 +94,27 @@
     "editor.formatOnSave": true,
     "editor.defaultFormatter": "vscode.typescript-language-features"
   },
-  // "editor.codeActionsOnSave": {
-  //   "source.fixAll.eslint": "explicit",
-  //   "source.fixAll.tslint": "explicit",
-  //   "source.organizeImports": "explicit",
-  //   "source.sortImports": "explicit"
-  // },
-  "eslint.alwaysShowStatus": true,
+  "[tailwindcss]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.formatOnSave": true
+  },
+  "[html]": {
+    "editor.defaultFormatter": "apility.beautify-blade",
+    "editor.formatOnSave": true
+  },
+  "[css]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.formatOnSave": true
+  },
+  "[jsonc]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[json]": {
+    "editor.defaultFormatter": "vscode.json-language-features"
+  },
 
   // Misc Config
+  "breadcrumbs.enabled": false,
   "workbench.startupEditor": "none",
   "explorer.compactFolders": false,
   "editor.tabSize": 2,
@@ -91,5 +126,11 @@
   },
   "editor.bracketPairColorization.enabled": true,
   "editor.guides.bracketPairs": true,
-  "window.zoomLevel": 0
+  "window.zoomLevel": 0,
+
+  // Custom CSS and JS Config For VSCode. First Need To Install Extension "Custom CSS and JS Loader"
+  "vscode_custom_css.imports": [
+    "file:///home/m/custom-vscode.css",
+    "file:///home/m/vscode-script.js"
+  ]
 }
