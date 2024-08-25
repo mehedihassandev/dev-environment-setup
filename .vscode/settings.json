@@ -1,153 +1,141 @@
 {
-  // Open JSON Editor For Settings
-  "workbench.settings.editor": "json",
+    // Open JSON Editor For Settings
+    "workbench.settings.editor": "json",
 
-  // Github settings
-  "github.copilot.editor.enableAutoCompletions": true,
-  "git.openRepositoryInParentFolders": "never",
-  "githubPullRequests.pullBranch": "never",
-  "git.confirmSync": false,
-  "github.copilot.preferredAccount": "mehedihassan3",
+    // Github settings
+    "github.copilot.editor.enableAutoCompletions": true,
+    "git.openRepositoryInParentFolders": "never",
+    "githubPullRequests.pullBranch": "never",
+    "git.confirmSync": false,
+    "github.copilot.preferredAccount": "mehedihassan3",
 
-  // Theme Config
-  "workbench.colorTheme": "Aura Dracula Spirit (Soft)",
-  "workbench.iconTheme": "material-icon-theme",
-  // "material-icon-theme.files.color": "#42a5f5",
-  // "material-icon-theme.saturation": 0,
-  "material-icon-theme.hidesExplorerArrows": true,
+    // Theme Config
+    "workbench.colorTheme": "Correia Gruvbox Theme",
+    "workbench.iconTheme": "material-icon-theme",
+    "material-icon-theme.hidesExplorerArrows": true,
 
-  // UI Configuration
-  "breadcrumbs.enabled": false,
-  "workbench.sideBar.location": "right",
-  "window.commandCenter": false,
-  "window.titleBarStyle": "custom",
-  "window.menuBarVisibility": "toggle",
-  "window.customTitleBarVisibility": "auto",
-  // "window.title": "${activeEditorMedium}${separator}${rootName}",
-  "window.title": "M O N S T E R ------ ${rootNameShort} ${separator} ${activeRepositoryBranchName}",
-  "workbench.activityBar.location": "top",
-  "workbench.editor.showTabs": "multiple",
-  "workbench.tree.indent": 15,
-  "security.promptForLocalFileProtocolHandling": false,
-  "workbench.colorCustomizations": {
-    "editorSuggestWidget.selectedBackground": "#231739",
-    "sideBar.background": "#191521",
-    "list.activeSelectionBackground": "#231739",
-    "list.inactiveSelectionBackground": "#231739",
-    "list.focusBackground": "#231739",
-    "list.hoverBackground": "#231739"
-  },
+    // UI Configuration
+    "breadcrumbs.enabled": false,
+    "workbench.sideBar.location": "right",
+    "workbench.statusBar.visible": false,
+    "workbench.layoutControl.enabled": false,
+    "window.commandCenter": true,
+    "window.titleBarStyle": "custom",
+    "window.menuBarVisibility": "toggle",
+    "window.customTitleBarVisibility": "auto",
+    // "window.title": "${activeEditorMedium}${separator}${rootName}",
+    "window.title": "M O N S T E R ------ ${rootNameShort} ${separator} ${activeRepositoryBranchName}",
+    "workbench.activityBar.location": "hidden",
+    "workbench.editor.showTabs": "multiple",
+    "workbench.tree.indent": 15,
 
-  // Cursor
-  "editor.cursorSmoothCaretAnimation": "on",
-  "editor.cursorBlinking": "expand",
-  "editor.cursorStyle": "line",
-  "editor.cursorWidth": 2,
+    // Cursor
+    "editor.cursorSmoothCaretAnimation": "on",
+    "editor.cursorBlinking": "expand",
+    "editor.cursorStyle": "line",
+    "editor.cursorWidth": 2,
 
-  // Font Config
-  "editor.fontFamily": "Cascadia Code, Fira Code, Operator Mono",
-  "editor.fontSize": 17,
-  "terminal.integrated.fontSize": 14,
-  "terminal.integrated.fontWeight": "bold",
-  "editor.fontLigatures": true,
+    // Font Config
+    "editor.fontFamily": "Cascadia Code, Fira Code, Operator Mono",
+    "editor.fontSize": 17,
+    "terminal.integrated.fontSize": 14,
+    "terminal.integrated.fontWeight": "bold",
+    "editor.fontLigatures": true,
 
-  // Editor
-  "editor.minimap.enabled": true,
-  "editor.minimap.autohide": true,
-  "editor.minimap.renderCharacters": false,
-  "editor.minimap.maxColumn": 50,
-  "editor.tabSize": 2,
-  "editor.wordWrap": "on",
-  "editor.wordWrapColumn": 120,
-  "editor.matchBrackets": "always",
-  "editor.lightbulb.enabled": "off",
-  "editor.hover.enabled": true,
-  "editor.overviewRulerBorder": false,
-  "editor.scrollbar.vertical": "hidden",
-  "editor.scrollbar.horizontal": "hidden",
-  "explorer.confirmDelete": false,
-  "editor.lineNumbers": "on",
-  "editor.stickyScroll.enabled": false,
-  "editor.renderWhitespace": "none",
-  "editor.linkedEditing": true,
-  "editor.bracketPairColorization.enabled": true,
-  "editor.guides.bracketPairs": true,
-  "editor.tokenColorCustomizations": {
-    "textMateRules": [
-      {
-        "scope": [
-          "comment",
-          "keyword",
-          "variable.language",
-          "entity.other.attribute-name.html",
-          "entity.other.attribute-name",
-          "keyword.control",
-          "storage.type",
-          "comment",
-          "comment.block",
-          "comment.line"
-        ],
-        "settings": {
-          "fontStyle": "italic"
-        }
-      }
+    // Editor
+    "editor.minimap.enabled": true,
+    "editor.minimap.autohide": true,
+    "editor.minimap.renderCharacters": false,
+    "editor.minimap.maxColumn": 50,
+    "editor.tabSize": 2,
+    "editor.wordWrap": "on",
+    "editor.wordWrapColumn": 120,
+    "editor.matchBrackets": "always",
+    "editor.lightbulb.enabled": "off",
+    "editor.hover.enabled": true,
+    "editor.overviewRulerBorder": false,
+    "editor.scrollbar.vertical": "auto",
+    "editor.scrollbar.horizontal": "hidden",
+    "explorer.confirmDelete": false,
+    "editor.lineNumbers": "on",
+    "editor.stickyScroll.enabled": false,
+    "editor.renderWhitespace": "none",
+    "editor.linkedEditing": true,
+    "editor.bracketPairColorization.enabled": true,
+    "editor.guides.bracketPairs": true,
+    "editor.tokenColorCustomizations": {
+        "textMateRules": [
+            {
+                "scope": [
+                    "comment",
+                    "keyword",
+                    "variable.language",
+                    "entity.other.attribute-name.html",
+                    "entity.other.attribute-name",
+                    "keyword.control",
+                    "storage.type",
+                    "comment",
+                    "comment.block",
+                    "comment.line"
+                ],
+                "settings": {
+                    "fontStyle": "italic"
+                }
+            }
+        ]
+    },
+
+    // Misc Config
+    "workbench.startupEditor": "none",
+    "explorer.compactFolders": false,
+    "breadcrumbs.filePath": "off",
+    "files.trimTrailingWhitespace": true,
+    "[markdown]": {
+        "files.trimTrailingWhitespace": false
+    },
+    "window.zoomLevel": 0,
+
+    // Extensions Config
+    "extensions.ignoreRecommendations": true,
+
+    // Config Related To Code Formatting
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "typescript.updateImportsOnFileMove.enabled": "always",
+    "terminal.integrated.defaultProfile.windows": "Git Bash",
+    "nxConsole.showNodeVersionOnStartup": false,
+    "prettier.tabWidth": 4,
+    "editor.formatOnSave": true,
+    "[javascript]": {
+        "editor.formatOnSave": true,
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[javascriptreact]": {
+        "editor.formatOnSave": true,
+        "editor.defaultFormatter": "vscode.typescript-language-features"
+    },
+    "[tailwindcss]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode",
+        "editor.formatOnSave": true
+    },
+    "[html]": {
+        "editor.defaultFormatter": "apility.beautify-blade",
+        "editor.formatOnSave": true
+    },
+    "[css]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode",
+        "editor.formatOnSave": true
+    },
+    "[jsonc]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[json]": {
+        "editor.defaultFormatter": "vscode.json-language-features"
+    },
+
+    // Custom CSS and JS Config For VSCode. First Need To Install Extension "Custom CSS and JS Loader"
+    "vscode_custom_css.imports": [
+        "file:///home/mh/.vscode/custom-vscode.css",
+        "file:///home/mh/.vscode/vscode-script.js",
+        "file:///home/mh/.vscode/extensions/brandonkirbyson.vscode-animations-2.0.3/dist/updateHandler.js"
     ]
-  },
-
-  // Misc Config
-  "workbench.startupEditor": "none",
-  "explorer.compactFolders": false,
-  "breadcrumbs.filePath": "off",
-  "files.trimTrailingWhitespace": true,
-  "[markdown]": {
-    "files.trimTrailingWhitespace": false
-  },
-  "window.zoomLevel": 0,
-
-  // Extensions Config
-  "extensions.ignoreRecommendations": true,
-
-  // Config Related To Code Formatting
-  "editor.defaultFormatter": "esbenp.prettier-vscode",
-  "typescript.updateImportsOnFileMove.enabled": "always",
-  "terminal.integrated.defaultProfile.windows": "Git Bash",
-  "nxConsole.showNodeVersionOnStartup": false,
-  "prettier.tabWidth": 4,
-  "editor.formatOnSave": true,
-  "[javascript]": {
-    "editor.formatOnSave": true,
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-  "[javascriptreact]": {
-    "editor.formatOnSave": true,
-    "editor.defaultFormatter": "vscode.typescript-language-features"
-  },
-  "[tailwindcss]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode",
-    "editor.formatOnSave": true
-  },
-  "[html]": {
-    "editor.defaultFormatter": "apility.beautify-blade",
-    "editor.formatOnSave": true
-  },
-  "[css]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode",
-    "editor.formatOnSave": true
-  },
-  "[jsonc]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-  "[json]": {
-    "editor.defaultFormatter": "vscode.json-language-features"
-  },
-  "extensions.experimental.affinity": {
-    "asvetliakov.vscode-neovim": 1
-  },
-
-  // Custom CSS and JS Config For VSCode. First Need To Install Extension "Custom CSS and JS Loader"
-  "vscode_custom_css.imports": [
-    "file:///home/m/custom-vscode.css",
-    "file:///home/m/vscode-script.js",
-    "file:///home/m/.vscode/extensions/brandonkirbyson.vscode-animations-2.0.3/dist/updateHandler.js"
-  ]
 }

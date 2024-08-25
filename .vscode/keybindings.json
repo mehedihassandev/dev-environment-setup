@@ -1,134 +1,96 @@
 // Place your key bindings in this file to override the defaults
 [
-  // NAVIGATION
-  // {
-  //   "key": "ctrl+shift+a",
-  //   "command": "workbench.action.terminal.focusNext",
-  //   "when": "terminalFocus"
-  // },
-  // {
-  //   "key": "ctrl+shift+b",
-  //   "command": "workbench.action.terminal.focusPrevious",
-  //   "when": "terminalFocus"
-  // },
-  // {
-  //   "key": "ctrl+shift+j",
-  //   "command": "workbench.action.togglePanel"
-  // },
-  // {
-  //   "key": "ctrl+shift+n",
-  //   "command": "workbench.action.terminal.new",
-  //   "when": "terminalFocus"
-  // },
-  // {
-  //   "key": "ctrl+shift+w",
-  //   "command": "workbench.action.terminal.kill",
-  //   "when": "terminalFocus"
-  // },
-
-  // FILE TREE
-  {
-    "key": "ctrl+e",
-    "command": "workbench.action.toggleSidebarVisibility"
-  },
-  {
-    "key": "ctrl+e",
-    "command": "workbench.files.action.focusFilesExplorer",
-    "when": "editorTextFocus"
-  },
-  {
-    "key": "n",
-    "command": "explorer.newFile",
-    "when": "filesExplorerFocus && !inputFocus"
-  },
-  {
-    "key": "r",
-    "command": "renameFile",
-    "when": "filesExplorerFocus && !inputFocus"
-  },
-  {
-    "key": "shift+n",
-    "command": "explorer.newFolder",
-    "when": "explorerViewletFocus && !inputFocus"
-  },
-  {
-    "key": "shift+n",
-    "command": "workbench.action.newWindow",
-    "when": "!explorerViewletFocus && !inputFocus"
-  },
-  {
-    "key": "d",
-    "command": "deleteFile",
-    "when": "filesExplorerFocus && !inputFocus"
-  },
-  {
-    "key": "ctrl+x",
-    "command": "editor.action.clipboardCutAction",
-    "when": "editorTextFocus"
-  },
-  {
-    "key": "ctrl+c",
-    "command": "editor.action.clipboardCopyAction",
-    "when": "editorTextFocus"
-  },
-  {
-    "key": "ctrl+v",
-    "command": "editor.action.clipboardPasteAction",
-    "when": "editorTextFocus"
-  },
-  {
-    "key": "ctrl+a",
-    "command": "editor.action.selectAll",
-    "when": "editorTextFocus"
-  },
-  {
-    "key": "ctrl+shift+e",
-    "command": "pieces-vscode.explainSnippet",
-    "when": "editorHasMultipleSelections || editorHasSelection || editorTextFocus"
-  },
-  {
-    "key": "ctrl+shift+j ctrl+shift+h",
-    "command": "workbench.action.openEditorAtIndex3"
-  },
-  {
-    "key": "alt+1",
-    "command": "workbench.view.explorer",
-    "when": "viewContainer.workbench.view.explorer.enabled"
-  },
-  {
-    "key": "alt+3",
-    "command": "workbench.view.scm",
-    "when": "workbench.scm.active && !gitlens:disabled && config.gitlens.keymap == 'chorded'"
-  },
-  {
-    "key": "alt+4",
-    "command": "gitlens.views.fileHistory.focus"
-  },
-  {
-    "key": "alt+5",
-    "command": "workbench.view.extensions",
-    "when": "viewContainer.workbench.view.extensions.enabled"
-  },
-  {
-    "key": "alt+6",
-    "command": "workbench.view.extension.pieces-explorer-activity-bar"
-  },
-  {
-    "key": "alt+7",
-    "command": "piecesCopilot.focus"
-  },
-  {
-    "key": "alt+8",
-    "command": "workbench.panel.chat.view.copilot.focus"
-  }
-
-  // EXTRA
-  // {
-  //   "key": "ctrl+shift+5",
-  //   "command": "editor.emmet.action.matchTag"
-  // },
-  // {
-  //   "key": "ctrl+z",
-  //   "command": "workbench.action.toggleZenMode"
-  // }
+    // FILE TREE
+    {
+        "key": "ctrl+e",
+        "command": "workbench.action.toggleSidebarVisibility"
+    },
+    {
+        "key": "ctrl+e",
+        "command": "workbench.files.action.focusFilesExplorer",
+        "when": "editorTextFocus"
+    },
+    {
+        "key": "n",
+        "command": "explorer.newFile",
+        "when": "filesExplorerFocus && !inputFocus"
+    },
+    {
+        "key": "r",
+        "command": "renameFile",
+        "when": "filesExplorerFocus && !inputFocus"
+    },
+    {
+        "key": "shift+n",
+        "command": "explorer.newFolder",
+        "when": "explorerViewletFocus && !inputFocus"
+    },
+    {
+        "key": "shift+n",
+        "command": "workbench.action.newWindow",
+        "when": "!explorerViewletFocus && !inputFocus"
+    },
+    {
+        "key": "d",
+        "command": "deleteFile",
+        "when": "filesExplorerFocus && !inputFocus"
+    },
+    {
+        "key": "ctrl+x",
+        "command": "editor.action.clipboardCutAction",
+        "when": "editorTextFocus"
+    },
+    {
+        "key": "ctrl+c",
+        "command": "editor.action.clipboardCopyAction",
+        "when": "editorTextFocus"
+    },
+    {
+        "key": "ctrl+v",
+        "command": "editor.action.clipboardPasteAction",
+        "when": "editorTextFocus"
+    },
+    {
+        "key": "ctrl+a",
+        "command": "editor.action.selectAll",
+        "when": "editorTextFocus"
+    },
+    {
+        "key": "ctrl+1",
+        "command": "workbench.view.explorer",
+        "when": "viewContainer.workbench.view.explorer.enabled"
+    },
+    {
+        "key": "ctrl+g g",
+        "command": "workbench.view.scm",
+        "when": "workbench.scm.active && !gitlens:disabled && config.gitlens.keymap == 'chorded'"
+    },
+    {
+        "key": "ctrl+g ctrl+shift+f",
+        "command": "gitlens.views.fileHistory.focus"
+    },
+    {
+        "key": "ctrl+g ctrl+shift+g",
+        "command": "workbench.view.extension.gistpad"
+    },
+    {
+        "key": "alt+c",
+        "command": "workbench.panel.chat.view.copilot.focus"
+    },
+    {
+        "key": "ctrl+k ctrl+down",
+        "command": "workbench.action.splitEditorDown"
+    },
+    {
+        "key": "ctrl+k ctrl+left",
+        "command": "workbench.action.splitEditorLeft"
+    },
+    {
+        "key": "ctrl+k ctrl+right",
+        "command": "workbench.action.splitEditorRight"
+    },
+    {
+        "key": "ctrl+k ctrl+up",
+        "command": "workbench.action.splitEditorUp"
+    }
 ]

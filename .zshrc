@@ -1,7 +1,14 @@
-eval "$(starship init zsh)"
+# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
+# Initialization code that may require console input (password prompts, [y/n]
+# confirmations, etc.) must go above this block; everything else may go below.
 if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
+
+# eval "$(starship init zsh)"
+# if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+#   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+# fi
 
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
@@ -10,7 +17,7 @@ export ZSH="$HOME/.oh-my-zsh"
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-ZSH_THEME="powerlevel10k/powerlevel10k"
+# ZSH_THEME="powerlevel10k/powerlevel10k"
 # ZSH_THEME="avit"
 
 DEFAULT_USER=$USER
@@ -22,7 +29,7 @@ DEFAULT_USER=$USER
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git zsh-autosuggestions history web-search copybuffer dirhistory zsh-syntax-highlighting)
+plugins=(git zsh-autosuggestions history web-search copybuffer dirhistory zsh-syntax-highlighting auto-notify $plugins)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -88,19 +95,16 @@ alias s="sudo"
 alias t="tmux"
 alias tk="tmux kill-session -t"
 alias tn="tmux new -s"
-alias j="cd ~/WebStorm-241.15989.47/bin && ./webstorm.sh"
 
-# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+eval "$(zoxide init zsh)"
 
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-export FZF_DEFAULT_OPS="--extended"
+# export ANDROID_HOME=$HOME/Android/Sdk
+# export PATH=$PATH:$ANDROID_HOME/emulator
+# export PATH=$PATH:$ANDROID_HOME/platform-tools
+# export PATH=/home/mh/OpenJDK17U-jdk_x64_linux_hotspot_17.0.12_7/jdk-17.0.12+7/bin:$PATH
 
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+export PATH=/home/mh/OpenJDK17U-jdk_x64_linux_hotspot_17.0.12_7/jdk-17.0.12+7/bin:$PATH
 
-export PATH=/home/m/Downloads/OpenJDK21U-jdk_x64_linux_hotspot_21.0.3_9/jdk-21.0.3+9/bin:$PATH
 
 export ANDROID_HOME=$HOME/Android/Sdk
 export PATH=$PATH:$ANDROID_HOME/emulator
@@ -108,22 +112,18 @@ export PATH=$PATH:$ANDROID_HOME/tools
 export PATH=$PATH:$ANDROID_HOME/tools/bin
 export PATH=$PATH:$ANDROID_HOME/platform-tools
 
-# Setup fzf key bindings
-eval "$(fzf --zsh)"
+# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
-# --- setup fzf theme ---
-fg="#CBE0F0"
-bg="#011628"
-bg_highlight="#143652"
-purple="#B388FF"
-blue="#06BCE4"
-cyan="#2CF9ED"
+# Set threshold to 20seconds
+export AUTO_NOTIFY_THRESHOLD=20
+export AUTO_NOTIFY_TITLE="Hey! %command has just finished"
+export AUTO_NOTIFY_BODY="It completed in %elapsed seconds with exit code %exit_code"
+# Set notification expiry to 10 seconds
+export AUTO_NOTIFY_EXPIRE_TIME=10000
 
-export FZF_DEFAULT_OPTS="--color=fg:${fg},bg:${bg},hl:${purple},fg+:${fg},bg+:${bg_highlight},hl+:${purple},info:${blue},prompt:${cyan},pointer:${cyan},marker:${cyan},spinner:${cyan},header:${cyan}"
 
-# Setup fuck key bindings
-eval $(thefuck --alias)
-# You can use whatever you want as an alias, like for Mondays:
-eval $(thefuck --alias FUCK)
+# starship prompt
+eval "$(starship init zsh)"
 
-eval "$(zoxide init zsh)"
+
