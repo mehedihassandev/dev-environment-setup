@@ -1,0 +1,76 @@
+# .config/ghostty/config
+
+# Theme
+theme = PaleNightHC
+shell-integration-features = no-cursor
+cursor-style = block
+background-opacity = 0.85
+background-blur-radius = 4
+window-colorspace = "display-p3"
+
+# Font-Family Style
+font-family = Cascadia Code
+font-style = Regular
+font-size = 13
+font-thicken = true
+cursor-style = block
+cursor-style-blink = false
+cursor-invert-fg-bg = true
+
+# Window Style
+window-decoration = true
+window-padding-x = 10
+window-padding-y = 10
+window-padding-balance = true
+mouse-hide-while-typing = true
+mouse-scroll-multiplier = 2
+window-padding-balance = true
+cursor-style = block
+cursor-style-blink = true
+confirm-close-surface = false
+adjust-underline-position = 40%
+adjust-underline-thickness = -60%
+confirm-close-surface = false
+
+
+macos-titlebar-style = hidden
+macos-option-as-alt = true
+mouse-hide-while-typing = true
+
+
+
+auto-update = check
+auto-update-channel = stable
+
+# extras
+shell-integration-features = no-cursor
+copy-on-select = clipboard
+
+
+# For Simple Keybinds
+keybind = super+r=reload_config
+keybind = super+i=inspector:toggle
+
+# Custom Keybinds & Config (super represents cmd key on mac)
+# For Simple Keybinds
+# keybind = super+r=reload_config
+keybind = super+i=inspector:toggle
+
+# Similar Tmux but with Ghostty
+keybind = ctrl+a>c=new_tab
+keybind = ctrl+a>n=new_window
+
+# splitting
+keybind = ctrl+a>l=new_split:right
+keybind = ctrl+a>j=new_split:down
+keybind = ctrl+a>e=equalize_splits
+
+# split nav (setting this to control will not work if tmux already uses it)
+keybind = ctrl+a>h=goto_split:left
+keybind = ctrl+a>j=goto_split:bottom
+keybind = ctrl+a>k=goto_split:top
+keybind = ctrl+a>l=goto_split:right
+
+# Fullscreen
+keybind = ctrl+a>f=toggle_fullscreen
+

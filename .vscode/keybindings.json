@@ -1,4 +1,3 @@
-// Place your key bindings in this file to override the defaults
 [
     // FILE TREE
     {
@@ -74,23 +73,142 @@
         "command": "workbench.view.extension.gistpad"
     },
     {
+        "key": "ctrl+w",
+        "command": "-workbench.action.closeGroup",
+        "when": "activeEditorGroupEmpty && multipleEditorGroups"
+    },
+    {
+        "key": "ctrl+w",
+        "command": "-extension.vim_ctrl+w",
+        "when": "editorTextFocus && vim.active && vim.use<C-w> && !inDebugRepl"
+    },
+
+    // GitHub Copilot
+    {
+        "key": "alt+/",
+        "command": "github.copilot.acceptCursorPanelSolution",
+        "when": "github.copilot.activated && github.copilot.panelVisible && activeWebviewPanelId == 'GitHub Copilot Suggestions'"
+    },
+    {
+        "key": "ctrl+alt+c",
+        "command": "github.copilot.git.generateCommitMessage"
+    },
+    {
+        "key": "alt+e",
+        "command": "github.copilot.chat.explain"
+    },
+    {
+        "key": "ctrl+alt+f",
+        "command": "github.copilot.chat.attachFile"
+    },
+    {
+        "key": "alt+s",
+        "command": "github.copilot.chat.attachSelection"
+    },
+    {
+        "key": "ctrl-h",
+        "command": "workbench.action.navigateLeft"
+    },
+    {
+        "key": "ctrl-l",
+        "command": "workbench.action.navigateRight"
+    },
+    {
+        "key": "ctrl-k",
+        "command": "workbench.action.navigateUp"
+    },
+    {
+        "key": "ctrl-j",
+        "command": "workbench.action.navigateDown"
+    },
+    {
+        "key": "tab",
+        "command": "workbench.action.nextEditorInGroup",
+        "when": "(vim.mode == 'Normal' || vim.mode == 'Visual') && (editorTextFocus || !inputFocus)"
+    },
+    {
+        "key": "shift-tab",
+        "command": "workbench.action.previousEditorInGroup",
+        "when": "(vim.mode == 'Normal' || vim.mode == 'Visual') && (editorTextFocus || !inputFocus)"
+    },
+    {
+        "key": "alt+f",
+        "command": "github.copilot.chat.fix"
+    },
+    {
+        "key": "alt+d",
+        "command": "github.copilot.chat.generateDocs"
+    },
+    {
+        "key": "alt+r",
+        "command": "github.copilot.chat.review"
+    },
+    {
+        "key": "ctrl+alt+i",
+        "command": "workbench.action.chat.openEditSession",
+        "when": "chatEditingParticipantRegistered && chatIsEnabled && view != 'workbench.panel.chat.view.edits'"
+    },
+    {
         "key": "alt+c",
         "command": "workbench.panel.chat.view.copilot.focus"
     },
+
+    // Traverse VSCode IntelliSense suggestions with vim keybindings.
     {
-        "key": "ctrl+k ctrl+down",
-        "command": "workbench.action.splitEditorDown"
+        "key": "cmd+j",
+        "command": "selectNextSuggestion",
+        "when": "suggestWidgetMultipleSuggestions && suggestWidgetVisible && textInputFocus"
     },
     {
-        "key": "ctrl+k ctrl+left",
-        "command": "workbench.action.splitEditorLeft"
+        "key": "cmd+k",
+        "command": "selectPrevSuggestion",
+        "when": "suggestWidgetMultipleSuggestions && suggestWidgetVisible && textInputFocus"
     },
     {
-        "key": "ctrl+k ctrl+right",
-        "command": "workbench.action.splitEditorRight"
+        "key": "ctrl+shift+alt+i",
+        "command": "-workbench.action.chat.openEditSession",
+        "when": "chatEditingParticipantRegistered && chatIsEnabled && view != 'workbench.panel.chat.view.edits'"
     },
     {
-        "key": "ctrl+k ctrl+up",
-        "command": "workbench.action.splitEditorUp"
+        "key": "ctrl+alt+i",
+        "command": "-workbench.panel.chat",
+        "when": "workbench.panel.chat.view.copilot.active"
+    },
+
+    // Vim binding
+    {
+        "key": "capslock",
+        "command": "extension.vim_escape",
+        "when": "editorTextFocus && vim.active && vim.mode == 'Insert'"
+    },
+    {
+        "key": "shift-k",
+        "command": "editor.action.showHover",
+        "when": "vim.mode == 'Normal' && editorTextFocus"
+    },
+    {
+        "key": "space space",
+        "command": "workbench.action.quickOpen",
+        "when": "vim.mode == 'Normal' && (editorTextFocus || !inputFocus)"
+    },
+    {
+        "key": "space d",
+        "command": "editor.action.revealDefinition",
+        "when": "vim.mode == 'Normal' && editorTextFocus"
+    },
+    {
+        "key": "space r",
+        "command": "editor.action.goToReferences",
+        "when": "vim.mode == 'Normal' && editorTextFocus"
+    },
+    {
+        "key": "ctrl-n",
+        "command": "editor.action.addSelectionToNextFindMatch",
+        "when": "(vim.mode == 'Normal' || vim.mode == 'Visual') && (editorTextFocus || !inputFocus)"
+    },
+    {
+        "key": "ctrl-f",
+        "command": "actions.find",
+        "when": "(vim.mode == 'Normal' || vim.mode == 'Visual') && (editorTextFocus || !inputFocus)"
     }
 ]

@@ -2,33 +2,6 @@
     // Open JSON Editor For Settings
     "workbench.settings.editor": "json",
 
-    // Github settings
-    "github.copilot.editor.enableAutoCompletions": true,
-    "git.openRepositoryInParentFolders": "never",
-    "githubPullRequests.pullBranch": "never",
-    "git.confirmSync": false,
-    "github.copilot.preferredAccount": "mehedihassan3",
-
-    // Theme Config
-    "workbench.colorTheme": "Correia Gruvbox Theme",
-    "workbench.iconTheme": "material-icon-theme",
-    "material-icon-theme.hidesExplorerArrows": true,
-
-    // UI Configuration
-    "breadcrumbs.enabled": false,
-    "workbench.sideBar.location": "right",
-    "workbench.statusBar.visible": false,
-    "workbench.layoutControl.enabled": false,
-    "window.commandCenter": true,
-    "window.titleBarStyle": "custom",
-    "window.menuBarVisibility": "toggle",
-    "window.customTitleBarVisibility": "auto",
-    // "window.title": "${activeEditorMedium}${separator}${rootName}",
-    "window.title": "M O N S T E R ------ ${rootNameShort} ${separator} ${activeRepositoryBranchName}",
-    "workbench.activityBar.location": "hidden",
-    "workbench.editor.showTabs": "multiple",
-    "workbench.tree.indent": 15,
-
     // Cursor
     "editor.cursorSmoothCaretAnimation": "on",
     "editor.cursorBlinking": "expand",
@@ -42,11 +15,25 @@
     "terminal.integrated.fontWeight": "bold",
     "editor.fontLigatures": true,
 
-    // Editor
+    // Theme & Editor Config
+    "workbench.colorTheme": "Flate Arc",
+    "workbench.iconTheme": "material-icon-theme",
+    "material-icon-theme.hidesExplorerArrows": true,
+    "workbench.layoutControl.enabled": false,
+    "workbench.activityBar.location": "top",
+    "workbench.sideBar.location": "right",
+    "window.commandCenter": false,
+    "window.titleBarStyle": "custom",
+    "window.menuBarVisibility": "toggle",
+    "window.customTitleBarVisibility": "auto",
+    "editor.lineNumbers": "relative",
+    "window.title": "M O N S T E R - ${rootNameShort} ${separator} ${activeRepositoryBranchName}",
+    "workbench.editor.showTabs": "multiple",
+    "workbench.editor.wrapTabs": true,
     "editor.minimap.enabled": true,
     "editor.minimap.autohide": true,
-    "editor.minimap.renderCharacters": false,
     "editor.minimap.maxColumn": 50,
+    "editor.minimap.renderCharacters": false,
     "editor.tabSize": 2,
     "editor.wordWrap": "on",
     "editor.wordWrapColumn": 120,
@@ -57,7 +44,6 @@
     "editor.scrollbar.vertical": "auto",
     "editor.scrollbar.horizontal": "hidden",
     "explorer.confirmDelete": false,
-    "editor.lineNumbers": "on",
     "editor.stickyScroll.enabled": false,
     "editor.renderWhitespace": "none",
     "editor.linkedEditing": true,
@@ -84,11 +70,35 @@
             }
         ]
     },
+    "editor.autoClosingBrackets": "always",
+    "editor.autoClosingComments": "always",
+    "editor.autoClosingDelete": "always",
+    "editor.autoClosingOvertype": "always",
+    "editor.autoClosingQuotes": "always",
+    "editor.bracketPairColorization.independentColorPoolPerBracketType": true,
+    "breadcrumbs.enabled": false,
+    "editor.rulers": [80, 95, 120, 160],
+
+    // Inlay Hints Config
+    "security.workspace.trust.untrustedFiles": "open",
+    "javascript.inlayHints.parameterNames.enabled": "all",
+    "typescript.inlayHints.parameterNames.enabled": "all",
+    "editor.inlayHints.padding": true,
+    "javascript.inlayHints.variableTypes.suppressWhenTypeMatchesName": false,
+    "typescript.inlayHints.variableTypes.suppressWhenTypeMatchesName": false,
+    "javascript.inlayHints.parameterTypes.enabled": true,
+    "typescript.inlayHints.parameterTypes.enabled": true,
+
+    // Github settings
+    "github.copilot.editor.enableAutoCompletions": true,
+    "git.openRepositoryInParentFolders": "never",
+    "githubPullRequests.pullBranch": "never",
+    "git.confirmSync": false,
+    // "github.copilot.preferredAccount": "mehedihassan3",
 
     // Misc Config
     "workbench.startupEditor": "none",
     "explorer.compactFolders": false,
-    "breadcrumbs.filePath": "off",
     "files.trimTrailingWhitespace": true,
     "[markdown]": {
         "files.trimTrailingWhitespace": false
@@ -101,9 +111,9 @@
     // Config Related To Code Formatting
     "editor.defaultFormatter": "esbenp.prettier-vscode",
     "typescript.updateImportsOnFileMove.enabled": "always",
-    "terminal.integrated.defaultProfile.windows": "Git Bash",
     "nxConsole.showNodeVersionOnStartup": false,
     "prettier.tabWidth": 4,
+    "workbench.tree.indent": 15,
     "editor.formatOnSave": true,
     "[javascript]": {
         "editor.formatOnSave": true,
@@ -134,8 +144,8 @@
 
     // Custom CSS and JS Config For VSCode. First Need To Install Extension "Custom CSS and JS Loader"
     "vscode_custom_css.imports": [
-        "file:///home/mh/.vscode/custom-vscode.css",
-        "file:///home/mh/.vscode/vscode-script.js",
-        "file:///home/mh/.vscode/extensions/brandonkirbyson.vscode-animations-2.0.3/dist/updateHandler.js"
-    ]
+        "file:///home/mh/vscode-style/custom-vscode.css",
+        "file:///home/mh/vscode-style/vscode-script.js"
+    ],
+    "vim.neovimPath": "/usr/bin/nvim"
 }

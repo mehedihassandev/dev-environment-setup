@@ -11,7 +11,6 @@ This repository is used to manage development environment files, such as dotfile
     -   vcs.xml
 -   .vscode/
     -   custom-vscode.css
-    -   extensions.json
     -   keybindings.json
     -   settings.json
     -   vscode-script.js
@@ -32,33 +31,25 @@ This repository is used to manage development environment files, such as dotfile
             -   example.lus
             -   etc
     -   init.lua
--   prettier/
-    -   .prettierignore
-    -   .prettierrc
 -   ssh/
     -   .config.md
     -   .ssh.md
--   .eslintrc.json
 -   .gitconfig
 -   .tmux.conf
 -   .zshrc
 -   alacritty.yml
--   configure_eslint_prettir.md
 -   starship.toml
 -   wezterm.lua
 
 ## Configuration Files
 
--   **.eslintrc.json**: ESLint configuration.
 -   **.gitconfig**: Git configuration.
 -   **.idea/**: IntelliJ IDEA project files.
 -   **.tmux.conf**: Tmux configuration.
 -   **.vscode/**: Visual Studio Code settings and extensions.
 -   **.zshrc**: Zsh shell configuration.
 -   **alacritty.yml**: Alacritty terminal emulator configuration.
--   **configure_eslint_prettir.md**: Guide to configure ESLint and Prettier.
 -   **nvim/**: Neovim configuration files.
--   **prettier/**: Prettier configuration.
 -   **ssh/**: SSH configuration and setup guides.
 -   **starship.toml**: Starship prompt configuration.
 -   **wezterm.lua**: WezTerm terminal emulator configuration.
