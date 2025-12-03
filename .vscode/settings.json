@@ -31,7 +31,7 @@
     "workbench.editor.showTabs": "multiple",
     "workbench.editor.wrapTabs": true,
     "editor.minimap.enabled": true,
-    "editor.minimap.autohide": true,
+    "editor.minimap.autohide": "mouseover",
     "editor.minimap.maxColumn": 50,
     "editor.minimap.renderCharacters": false,
     "editor.tabSize": 2,
