@@ -1,0 +1,277 @@
+// Zed settings
+//
+// For information on how to configure Zed, see the Zed
+// documentation: https://zed.dev/docs/configuring-zed
+//
+// To see all of Zed's default settings without changing your
+// custom settings, run `zed: open default settings` from the
+// command palette (cmd-shift-p / ctrl-shift-p)
+{
+  // --- UI & Theme ---
+  "context_servers": {
+    "Context7": {
+      "settings": {}
+    },
+    "mcp-server-context7": {
+      "enabled": true,
+      "settings": {
+        "context7_api_key": "ctx7sk-efd1a1bf-b4df-4170-886b-f5cddab15428"
+      }
+    }
+  },
+  "outline_panel": {
+    "dock": "right"
+  },
+  "collaboration_panel": {
+    "dock": "right"
+  },
+  "icon_theme": "Colored Zed Icons Theme Dark",
+  "theme": "Tokyo Night Storm",
+  "ui_font_size": 16,
+  "project_panel": {
+    "dock": "right",
+    "auto_fold_dirs": false,
+    "file_icons": true
+  },
+  "tabs": {
+    "git_status": true
+  },
+  "status_bar": {
+    "show_cursor_position": true,
+    "show_vim_mode": true
+  },
+  "toolbar": {
+    "breadcrumbs": true,
+    "quick_actions": false
+  },
+
+  // --- AI: GitHub Copilot ---
+  "git_panel": {
+    "dock": "right"
+  },
+  "agent": {
+    "always_allow_tool_actions": true,
+    "default_profile": "write",
+    "default_model": {
+      "provider": "copilot_chat",
+      "model": "claude-sonnet-4.5"
+    },
+    "inline_assistant_model": {
+      "provider": "copilot_chat",
+      "model": "o4-mini"
+    }
+  },
+  "features": {
+    "edit_prediction_provider": "copilot"
+  },
+  "edit_predictions": {
+    "provider": "copilot",
+    "enabled": true
+  },
+
+  // --- Editor Font ---
+  "buffer_font_family": "JetBrainsMono Nerd Font Mono",
+  "buffer_font_size": 18,
+  "buffer_line_height": "comfortable",
+  "buffer_font_features": {
+    "calt": true
+  },
+
+  // --- Cursor & Vim Mode ---
+  "vim_mode": true,
+  "vim": {
+    "use_system_clipboard": "always"
+  },
+  // OPTIONAL: Most Vim users prefer relative line numbers
+  "relative_line_numbers": "enabled",
+  "cursor_blink_mode": "terminal_consistent",
+  "cursor_shape": "bar",
+  "scroll_sensitivity": 1.0,
+
+  // --- General Formatting ---
+  "format_on_save": "on",
+  "formatter": "prettier", // Modern Zed handles this natively
+  "tab_size": 2,
+  "hard_tabs": false,
+  "remove_trailing_whitespace_on_save": true,
+  "ensure_newline_on_save": true,
+  "use_autoclose": true,
+
+  // --- Visual Guides ---
+  "preferred_line_length": 80,
+  "wrap_guides": [80, 120],
+  "soft_wrap": "editor_width",
+  "show_whitespaces": "selection",
+  "bracket_pair_colorization": true,
+
+  // --- Minimap ---
+  "minimap": {
+    "enabled": true,
+    "show": "auto",
+    "max_width_columns": 50
+  },
+
+  // --- Terminal ---
+  "terminal": {
+    "font_family": "JetBrainsMono Nerd Font Mono",
+    "font_size": 16,
+    "line_height": "comfortable",
+    "blinking_cursor": true,
+    "dock": "bottom",
+    "shell": {
+      // CHANGED: 'sh' is too basic for most devs. Use zsh (Mac default) or bash.
+      "program": "zsh"
+    },
+    "working_directory": "current_project_directory"
+  },
+
+  // --- Git & Telemetry ---
+  "git": {
+    "git_gutter": "tracked_files",
+    "inline_blame": {
+      "enabled": true
+    }
+  },
+  "telemetry": {
+    "diagnostics": false,
+    "metrics": false
+  },
+
+  // --- LSP Configuration ---
+  "inlay_hints": {
+    "enabled": false,
+    "show_type_hints": false,
+    "show_parameter_hints": false
+  },
+  "lsp": {
+    "eslint": {
+      "settings": {
+        "nodePath": "./node_modules/eslint",
+        "validate": [
+          "javascript",
+          "typescript",
+          "typescriptreact",
+          "javascriptreact"
+        ],
+        "run": "onType",
+        "format": true,
+        "codeActionOnSave": {
+          "enable": true,
+          "mode": "all"
+        }
+      }
+    },
+    "typescript-language-server": {
+      "settings": {
+        "typescript": {
+          "inlayHints": {
+            "includeInlayParameterNameHints": "none",
+            "includeInlayParameterNameHintsWhenArgumentMatchesName": false,
+            "includeInlayFunctionParameterTypeHints": false,
+            "includeInlayVariableTypeHints": false,
+            "includeInlayPropertyDeclarationTypeHints": false,
+            "includeInlayFunctionLikeReturnTypeHints": false,
+            "includeInlayEnumMemberValueHints": false
+          }
+        }
+      }
+    },
+    "tailwindcss-language-server": {
+      "settings": {
+        "tailwindCSS": {
+          "validate": true,
+          "lint": {
+            "cssConflict": "warning",
+            "invalidApply": "error",
+            "invalidConfigPath": "error",
+            "invalidScreen": "error",
+            "invalidTailwindDirective": "error",
+            "invalidVariant": "error",
+            "recommendedVariantOrder": "warning"
+          }
+        }
+      }
+    },
+    "vtsls": {
+      "settings": {
+        "css": {
+          "lint": {
+            "unknownAtRules": "ignore"
+          }
+        }
+      }
+    }
+  },
+
+  // --- Language Specifics ---
+  // Note: We removed the duplicate CSS key and the verbose formatter settings
+  // because "formatter": "prettier" at the global level handles this now.
+  "languages": {
+    "JavaScript": {
+      "code_actions_on_format": { "source.fixAll.eslint": true }
+    },
+    "TypeScript": {
+      "code_actions_on_format": { "source.fixAll.eslint": true }
+    },
+    "TSX": {
+      "code_actions_on_format": { "source.fixAll.eslint": true }
+    },
+    "JSX": {
+      "code_actions_on_format": { "source.fixAll.eslint": true }
+    },
+    "Markdown": {
+      "remove_trailing_whitespace_on_save": false
+    },
+    "CSS": {
+      // Merged your two CSS blocks here
+      "language_servers": ["tailwindcss-language-server", "eslint"]
+    }
+  },
+
+  // --- File Exclusions ---
+  "file_scan_exclusions": [
+    "**/.git",
+    "**/node_modules",
+    "**/dist",
+    "**/.nx",
+    "**/tools",
+    "**/nginx",
+    "**/.husky",
+    "**/mfe-nmfe-svc",
+    "**/pos-svc-cws",
+    "**/pos-svc",
+    "**/pcm-svc",
+    "**/wadmin-svc",
+    "**/wholesaler-svc",
+    "**/ebill-svc-cws",
+    "**/ebill-svc",
+    "**/boost-e2e",
+    "**/config-e2e",
+    "**/ebill-e2e",
+    "**/mycare-e2e",
+    "**/pcm-e2e",
+    "**/pos-e2e",
+    "**/w-admin-e2e",
+    "**/wholesaler-e2e"
+  ],
+
+  // --- Custom Dictionary ---
+  "custom_words": [
+    "EXOS",
+    "Msal",
+    "tanstack",
+    "correlator",
+    "exos",
+    "msal",
+    "reduxjs",
+    "hookform",
+    "nrwl",
+    "nx",
+    "nivo",
+    "apexcharts",
+    "jspdf",
+    "tesseract",
+    "mrz",
+    "stylis"
+  ]
+}

@@ -1,0 +1,113 @@
+// Zed keymap
+//
+// For information on binding keys, see the Zed
+// documentation: https://zed.dev/docs/key-bindings
+//
+// To see the default key bindings run `zed: open default keymap`
+// from the command palette.
+[
+  // --- Global / Workspace ---
+  {
+    "context": "Workspace",
+    "bindings": {
+      // Sidebar / Explorer Visibility
+      "cmd-e": "workspace::ToggleLeftDock",
+      "cmd-1": "project_panel::ToggleFocus",
+
+      // Window/Pane Navigation (Vim style)
+      "cmd-h": "workspace::ActivatePaneLeft",
+      "cmd-l": "workspace::ActivatePaneRight",
+      "cmd-k": "workspace::ActivatePaneUp",
+      "cmd-j": "workspace::ActivatePaneDown",
+
+      // Quick Open / File Finder
+      "ctrl-p": "file_finder::Toggle",
+
+      // Git / Source Control (Toggle Right Dock)
+      "cmd-g g": "workspace::ToggleRightDock",
+
+      // Copilot / Assistant Panel
+      "alt-c": "assistant::ToggleFocus"
+    }
+  },
+
+  // --- File Explorer (Project Panel) ---
+  // Mimics your VS Code "n" for new file, "r" for rename, etc.
+  {
+    "context": "ProjectPanel && not_editing",
+    "bindings": {
+      "n": "project_panel::NewFile",
+      "shift-n": "project_panel::NewDirectory",
+      "r": "project_panel::Rename",
+      "d": "project_panel::Delete",
+      "enter": "project_panel::Open",
+      "space": "project_panel::Open",
+
+      // Standard Clipboard in Explorer
+      "cmd-c": "project_panel::Copy",
+      "cmd-x": "project_panel::Cut",
+      "cmd-v": "project_panel::Paste"
+    }
+  },
+
+  // --- Editor (Vim Normal Mode) ---
+  {
+    "context": "Editor && vim_mode == normal",
+    "bindings": {
+      // Tab Switching
+      "tab": "pane::ActivateNextItem",
+      "shift-tab": "pane::ActivatePreviousItem",
+
+      // Hover & Definition
+      "shift-k": "editor::Hover",
+      "space d": "editor::GoToDefinition",
+      "space r": "editor::FindAllReferences",
+
+      // Search
+      "cmd-f": "buffer_search::Deploy",
+      "ctrl-n": "editor::SelectNext", // Add selection to next find match
+
+      // Clear search/highlights (Escape usually handles this, but ensuring consistency)
+      "escape": "editor::Cancel"
+    }
+  },
+
+  // --- Editor (Insert Mode & General) ---
+  {
+    "context": "Editor",
+    "bindings": {
+      "cmd-a": "editor::SelectAll",
+      "cmd-c": "editor::Copy",
+      "cmd-v": "editor::Paste",
+      "cmd-x": "editor::Cut",
+
+      // Copilot / Inline Assist
+      // Zed uses 'Inline Assist' for editing code with AI
+      "cmd-alt-i": "assistant::InlineAssist",
+      "ctrl-enter": "assistant::InlineAssist"
+    }
+  },
+
+  // --- Editor (Suggestions / IntelliSense) ---
+  // Navigate suggestion list with Cmd+J / Cmd+K
+  {
+    "context": "Editor && menu_open",
+    "bindings": {
+      "cmd-j": "menu::SelectNext",
+      "cmd-k": "menu::SelectPrevious"
+    }
+  },
+
+  // --- Fix for Cmd+K Conflict ---
+  // Zed uses Cmd+K as a prefix (like Cmd+K Cmd+S).
+  // To use Cmd+K for navigation, we must unbind the default chords in the workspace.
+  {
+    "context": "Workspace",
+    "bindings": {
+      "cmd-k s": null,
+      "cmd-k m": null,
+      "cmd-k g": null,
+      "cmd-k shift-s": null
+    }
+  }
+]
