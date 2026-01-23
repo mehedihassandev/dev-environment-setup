@@ -1,0 +1,203 @@
+# ==========================================
+# 🌙 Ghostty Configuration (Merged)
+# ==========================================
+# Enhanced by ramxcodes/term-conf
+# Merged with existing configuration
+# ==========================================
+
+# ============ THEME & COLORS ============
+
+# Glass morphism effect - transparency + blur (enhanced from reference)
+background-opacity = 0.85
+background-blur-radius = 25
+
+# Custom Tokyo Night-inspired colors (from reference)
+background = #1a1b26
+foreground = #c0caf5
+
+# Tokyo Night palette colors for full experience
+palette = 0=#15161e
+palette = 1=#f7768e
+palette = 2=#9ece6a
+palette = 3=#e0af68
+palette = 4=#7aa2f7
+palette = 5=#bb9af7
+palette = 6=#7dcfff
+palette = 7=#a9b1d6
+palette = 8=#414868
+palette = 9=#f7768e
+palette = 10=#9ece6a
+palette = 11=#e0af68
+palette = 12=#7aa2f7
+palette = 13=#bb9af7
+palette = 14=#7dcfff
+palette = 15=#c0caf5
+
+# Cursor configuration (merged)
+shell-integration-features = cursor,sudo,title
+cursor-style = block
+cursor-style-blink = true
+cursor-opacity = 0.9
+cursor-color = #bb9af7
+cursor-invert-fg-bg = true
+cursor-click-to-move = true
+
+# Selection colors for better contrast
+selection-background = #33467c
+selection-foreground = #c0caf5
+
+# ============ TYPOGRAPHY ============
+
+# Font configuration (merged from both configs)
+font-family = "FiraCode Nerd Font"
+font-family = "JetBrains Mono Nerd Font"
+font-family = "JetBrains Mono"
+font-family = "Fira Code"
+font-family = "SF Mono"
+font-size = 13
+font-thicken = true
+
+# Enable programming ligatures for productivity
+font-feature = +calt,+liga,+dlig
+
+# Font adjustments for crisp rendering (merged)
+adjust-cell-height = 25%
+
+# ============ WINDOW STYLING ============
+
+# Window appearance settings (merged)
+window-colorspace = "display-p3"
+scrollback-limit = 100000
+title = "MONSTER"
+
+# Window padding (enhanced from reference)
+window-padding-x = 20
+window-padding-y = 16
+window-padding-balance = true
+window-padding-color = extend
+
+# Window size and behavior (from reference)
+window-width = 120
+window-height = 30
+window-decoration = true
+window-theme = dark
+window-inherit-working-directory = false
+window-inherit-font-size = true
+window-save-state = always
+
+# macOS specific glass morphism enhancements
+macos-titlebar-style = "transparent"
+macos-window-shadow = true
+macos-option-as-alt = true
+
+# ============ SHELL INTEGRATION & BEHAVIOR ============
+
+# Enhanced terminal experience - CRITICAL for auto-suggestions
+shell-integration = detect
+
+# Window behavior
+confirm-close-surface = false
+quit-after-last-window-closed = false
+
+# Auto-update configuration (from original)
+auto-update = check
+auto-update-channel = stable
+
+# ============ PRODUCTIVITY FEATURES ============
+
+# Mouse and interaction
+mouse-hide-while-typing = true
+focus-follows-mouse = false
+
+# Clipboard enhancements (merged)
+clipboard-read = allow
+clipboard-write = allow
+copy-on-select = clipboard
+clipboard-trim-trailing-spaces = true
+click-repeat-interval = 500
+
+# Better scrolling
+mouse-scroll-multiplier = 3
+
+# ============ ADVANCED AESTHETICS ============
+
+# Smooth rendering and aesthetics
+alpha-blending = linear-corrected
+minimum-contrast = 1.5
+
+# Split window styling for productivity
+unfocused-split-opacity = 0.7
+split-divider-color = #414868
+
+# Performance
+window-vsync = true
+resize-overlay = after-first
+resize-overlay-position = center
+
+# ============ MISC ENHANCEMENTS ============
+
+# Better link handling
+link-url = true
+
+# App behavior
+app-notifications = no-clipboard-copy
+
+# Terminal features
+bold-is-bright = true
+title-report = false
+
+# Working directory - start in user home directory
+working-directory = /Users/mdmehedihassan
+
+# ============================================
+# KEYBINDINGS (MERGED FROM BOTH CONFIGS)
+# ============================================
+
+# ============ Original Keybinds ============
+keybind = super+r=reload_config
+keybind = super+i=inspector:toggle
+
+# Similar Tmux but with Ghostty (from original)
+keybind = ctrl+a>c=new_tab
+keybind = ctrl+a>n=new_window
+
+# Splitting (from original)
+keybind = ctrl+a>l=new_split:right
+keybind = ctrl+a>j=new_split:down
+keybind = ctrl+a>e=equalize_splits
+
+# Split navigation (from original)
+keybind = ctrl+a>h=goto_split:left
+keybind = ctrl+a>j=goto_split:bottom
+keybind = ctrl+a>k=goto_split:top
+keybind = ctrl+a>l=goto_split:right
+
+# Fullscreen (from original)
+keybind = ctrl+a>f=toggle_fullscreen
+
+# Toggle window decorations (from original)
+keybind = ctrl+a>t=toggle_window_decorations
+
+# ============ New Productivity Keybindings ============
+# Standard shortcuts
+keybind = cmd+t=new_tab
+keybind = cmd+w=close_surface
+keybind = cmd+n=new_window
+
+# Additional splitting shortcuts
+keybind = cmd+shift+t=new_split:right
+keybind = cmd+shift+d=new_split:down
+
+# Tab navigation
+keybind = cmd+1=goto_tab:1
+keybind = cmd+2=goto_tab:2
+keybind = cmd+3=goto_tab:3
+keybind = cmd+4=goto_tab:4
+keybind = cmd+5=goto_tab:5
+
+# Glass morphism toggle
+keybind = cmd+shift+g=toggle_window_decorations
+
+# ==========================================
+# END OF CONFIGURATION
+# ==========================================

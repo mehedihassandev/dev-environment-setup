@@ -1,11 +1,11 @@
 [
     // FILE TREE
     {
-        "key": "ctrl+e",
+        "key": "cmd+e",
         "command": "workbench.action.toggleSidebarVisibility"
     },
     {
-        "key": "ctrl+e",
+        "key": "cmd+e",
         "command": "workbench.files.action.focusFilesExplorer",
         "when": "editorTextFocus"
     },
@@ -35,54 +35,53 @@
         "when": "filesExplorerFocus && !inputFocus"
     },
     {
-        "key": "ctrl+x",
+        "key": "cmd+x",
         "command": "editor.action.clipboardCutAction",
         "when": "editorTextFocus"
     },
     {
-        "key": "ctrl+c",
+        "key": "cmd+c",
         "command": "editor.action.clipboardCopyAction",
         "when": "editorTextFocus"
     },
     {
-        "key": "ctrl+v",
+        "key": "cmd+v",
         "command": "editor.action.clipboardPasteAction",
         "when": "editorTextFocus"
     },
     {
-        "key": "ctrl+a",
+        "key": "cmd+a",
         "command": "editor.action.selectAll",
         "when": "editorTextFocus"
     },
     {
-        "key": "ctrl+1",
+        "key": "cmd+1",
         "command": "workbench.view.explorer",
         "when": "viewContainer.workbench.view.explorer.enabled"
     },
     {
-        "key": "ctrl+g g",
+        "key": "cmd+g g",
         "command": "workbench.view.scm",
         "when": "workbench.scm.active && !gitlens:disabled && config.gitlens.keymap == 'chorded'"
     },
     {
-        "key": "ctrl+g ctrl+shift+f",
+        "key": "cmd+g cmd+shift+f",
         "command": "gitlens.views.fileHistory.focus"
     },
     {
-        "key": "ctrl+g ctrl+shift+g",
+        "key": "cmd+g cmd+shift+g",
         "command": "workbench.view.extension.gistpad"
     },
     {
-        "key": "ctrl+w",
+        "key": "cmd+w",
         "command": "-workbench.action.closeGroup",
         "when": "activeEditorGroupEmpty && multipleEditorGroups"
     },
     {
-        "key": "ctrl+w",
+        "key": "cmd+w",
         "command": "-extension.vim_ctrl+w",
         "when": "editorTextFocus && vim.active && vim.use<C-w> && !inDebugRepl"
     },
-
     // GitHub Copilot
     {
         "key": "alt+/",
@@ -90,7 +89,7 @@
         "when": "github.copilot.activated && github.copilot.panelVisible && activeWebviewPanelId == 'GitHub Copilot Suggestions'"
     },
     {
-        "key": "ctrl+alt+c",
+        "key": "cmd+alt+c",
         "command": "github.copilot.git.generateCommitMessage"
     },
     {
@@ -98,7 +97,7 @@
         "command": "github.copilot.chat.explain"
     },
     {
-        "key": "ctrl+alt+f",
+        "key": "cmd+alt+f",
         "command": "github.copilot.chat.attachFile"
     },
     {
@@ -106,19 +105,19 @@
         "command": "github.copilot.chat.attachSelection"
     },
     {
-        "key": "ctrl-h",
+        "key": "cmd+h",
         "command": "workbench.action.navigateLeft"
     },
     {
-        "key": "ctrl-l",
+        "key": "cmd+l",
         "command": "workbench.action.navigateRight"
     },
     {
-        "key": "ctrl-k",
+        "key": "cmd+k",
         "command": "workbench.action.navigateUp"
     },
     {
-        "key": "ctrl-j",
+        "key": "cmd+j",
         "command": "workbench.action.navigateDown"
     },
     {
@@ -127,7 +126,7 @@
         "when": "(vim.mode == 'Normal' || vim.mode == 'Visual') && (editorTextFocus || !inputFocus)"
     },
     {
-        "key": "shift-tab",
+        "key": "shift+tab",
         "command": "workbench.action.previousEditorInGroup",
         "when": "(vim.mode == 'Normal' || vim.mode == 'Visual') && (editorTextFocus || !inputFocus)"
     },
@@ -144,7 +143,7 @@
         "command": "github.copilot.chat.review"
     },
     {
-        "key": "ctrl+alt+i",
+        "key": "cmd+alt+i",
         "command": "workbench.action.chat.openEditSession",
         "when": "chatEditingParticipantRegistered && chatIsEnabled && view != 'workbench.panel.chat.view.edits'"
     },
@@ -152,8 +151,7 @@
         "key": "alt+c",
         "command": "workbench.panel.chat.view.copilot.focus"
     },
-
-    // Traverse VSCode IntelliSense suggestions with vim keybindings.
+    // IntelliSense suggestions with vim keybindings
     {
         "key": "cmd+j",
         "command": "selectNextSuggestion",
@@ -170,26 +168,25 @@
         "when": "chatEditingParticipantRegistered && chatIsEnabled && view != 'workbench.panel.chat.view.edits'"
     },
     {
-        "key": "ctrl+alt+i",
+        "key": "cmd+alt+i",
         "command": "-workbench.panel.chat",
         "when": "workbench.panel.chat.view.copilot.active"
     },
-
-    // Vim binding
+    // Vim bindings
     {
         "key": "capslock",
         "command": "extension.vim_escape",
         "when": "editorTextFocus && vim.active && vim.mode == 'Insert'"
     },
     {
-        "key": "shift-k",
+        "key": "shift+k",
         "command": "editor.action.showHover",
         "when": "vim.mode == 'Normal' && editorTextFocus"
     },
     {
-        "key": "space space",
+        "key": "cmd",
         "command": "workbench.action.quickOpen",
-        "when": "vim.mode == 'Normal' && (editorTextFocus || !inputFocus)"
+        "when": "editorTextFocus && vim.mode == 'Normal' || !inputFocus && vim.mode == 'Normal'"
     },
     {
         "key": "space d",
@@ -202,13 +199,32 @@
         "when": "vim.mode == 'Normal' && editorTextFocus"
     },
     {
-        "key": "ctrl-n",
+        "key": "ctrl+n",
         "command": "editor.action.addSelectionToNextFindMatch",
         "when": "(vim.mode == 'Normal' || vim.mode == 'Visual') && (editorTextFocus || !inputFocus)"
     },
     {
-        "key": "ctrl-f",
+        "key": "cmd+f",
         "command": "actions.find",
         "when": "(vim.mode == 'Normal' || vim.mode == 'Visual') && (editorTextFocus || !inputFocus)"
+    },
+    {
+        "key": "ctrl+shift+d",
+        "command": "extension.vim_ctrl+d",
+        "when": "editorTextFocus && vim.active && vim.use<C-d> && !inDebugRepl"
+    },
+    {
+        "key": "cmd+alt+d",
+        "command": "workbench.view.debug",
+        "when": "viewContainer.workbench.view.debug.enabled"
+    },
+    {
+        "key": "ctrl+shift+d",
+        "command": "-workbench.view.debug",
+        "when": "viewContainer.workbench.view.debug.enabled"
+    },
+    {
+        "key": "ctrl+p",
+        "command": "workbench.action.quickOpen"
     }
 ]

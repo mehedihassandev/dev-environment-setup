@@ -3,16 +3,18 @@
     position: absolute !important;
     right: 1px !important;
     width: 1px !important;
-    background: #bc9abc !important;
+    /* background: #bc9abc !important; */
     left: auto !important;
 }
 
 /*********************** Project Title ***********************/
 .window-title {
     font-family: "Cascadia Code" !important;
-    font-size: 14px !important;
+    /* font-family: "Fira Code" !important; */
+    font-size: 16px !important;
     font-weight: bold !important;
     color: #fff !important;
+    padding-left: 65px !important;
 }
 .titlebar-left {
     justify-content: flex-start !important;
@@ -24,33 +26,33 @@
 .quick-input-widget {
     transform: translateY(-50%) !important;
     top: 50% !important;
-    box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.45) !important;
+    /* box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.45) !important; */
     padding: 10px 10px 18px 10px !important;
     backdrop-filter: blur(3px) !important;
     border-radius: 8px !important;
 }
 
 /* Remove background for lists */
-.monaco-list-rows {
+/* .monaco-list-rows {
     background: transparent !important;
-}
+} */
 
 /* List hover */
-.monaco-list-row:hover {
+/* .monaco-list-row:hover {
     background: rgba(0, 0, 0, 0.2) !important;
-}
+} */
 
-.notifications-toasts .monaco-list-row:hover {
+/* .notifications-toasts .monaco-list-row:hover {
     background: none !important;
-}
+} */
 
-.monaco-list-row.focused {
+/* .monaco-list-row.focused {
     background-color: rgb(181 198 228 / 25%) !important;
-}
+} */
 
-.synthetic-focus {
+/* .synthetic-focus {
     outline-color: rgba(50, 50, 50, 1) !important;
-}
+} */
 
 .truequick-input-widget .monaco-label {
     font-size: 14px !important;
@@ -61,9 +63,9 @@
     border-radius: 8px !important;
     padding: 8px !important;
     border: none !important;
-    background-color: rgba(34, 34, 34, 0.4) !important;
-    font-family: "Cascadia Code" !important;
-    font-size: 16px !important;
+    /* background-color: rgba(34, 34, 34, 0.4) !important; */
+    font-family: "Fira Code" !important;
+    font-size: 14px !important;
     margin-bottom: 16px !important;
 }
 
@@ -78,16 +80,17 @@
 }
 
 /* Command palette's input box placeholder. */
-.monaco-inputbox input::placeholder {
+/* .monaco-inputbox input::placeholder {
     color: rgba(255, 255, 255, 0.3) !important;
-}
+} */
 
 .monaco-workbench label {
-    color: #fff !important;
-    font-size: 16px !important;
+    /* color: #fff !important; */
+    font-size: 14px !important;
 }
 
 /* Container that holds the VS Code home icon. */
-.editor-group-watermark {
+/* .editor-group-watermark {
     max-width: none !important;
-}
+    max-height: none !important;
+} */

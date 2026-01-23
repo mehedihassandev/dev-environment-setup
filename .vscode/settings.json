@@ -8,28 +8,27 @@
     "editor.cursorStyle": "line",
     "editor.cursorWidth": 2,
 
+    // Theme Config
+    "workbench.colorTheme": "Flate Arc",
+    "workbench.iconTheme": "symbols",
+    "material-icon-theme.hidesExplorerArrows": true,
+    "vsicons.presets.hideExplorerArrows": true,
+    "workbench.activityBar.location": "top",
+    "workbench.tree.indent": 16,
+
     // Font Config
-    "editor.fontFamily": "Cascadia Code, Fira Code, Operator Mono",
-    "editor.fontSize": 17,
-    "terminal.integrated.fontSize": 14,
+    "editor.fontFamily": "JetBrains Mono, Iosevka Nerd Font, Fira Code, Cascadia Code, Operator Mono",
+    "editor.lineHeight": 1.8,
+    "editor.fontSize": 18,
+    "terminal.integrated.fontSize": 16,
     "terminal.integrated.fontWeight": "bold",
     "editor.fontLigatures": true,
-
-    // Theme & Editor Config
-    "workbench.colorTheme": "Flate Arc",
-    "workbench.iconTheme": "material-icon-theme",
-    "material-icon-theme.hidesExplorerArrows": true,
-    "workbench.layoutControl.enabled": false,
-    "workbench.activityBar.location": "top",
     "workbench.sideBar.location": "right",
-    "window.commandCenter": false,
     "window.titleBarStyle": "custom",
     "window.menuBarVisibility": "toggle",
     "window.customTitleBarVisibility": "auto",
-    "editor.lineNumbers": "relative",
-    "window.title": "M O N S T E R - ${rootNameShort} ${separator} ${activeRepositoryBranchName}",
-    "workbench.editor.showTabs": "multiple",
-    "workbench.editor.wrapTabs": true,
+    // "editor.lineNumbers": "relative",
+    "window.title": "M O N S T E R ${separator} ${rootNameShort} ${separator} ${activeRepositoryBranchName} ${dirty}",
     "editor.minimap.enabled": true,
     "editor.minimap.autohide": "mouseover",
     "editor.minimap.maxColumn": 50,
@@ -39,7 +38,7 @@
     "editor.wordWrapColumn": 120,
     "editor.matchBrackets": "always",
     "editor.lightbulb.enabled": "off",
-    "editor.hover.enabled": true,
+    "editor.hover.enabled": "on",
     "editor.overviewRulerBorder": false,
     "editor.scrollbar.vertical": "auto",
     "editor.scrollbar.horizontal": "hidden",
@@ -77,23 +76,25 @@
     "editor.autoClosingQuotes": "always",
     "editor.bracketPairColorization.independentColorPoolPerBracketType": true,
     "breadcrumbs.enabled": false,
-    "editor.rulers": [80, 95, 120, 160],
+    "editor.rulers": [120, 160],
 
     // Inlay Hints Config
-    "security.workspace.trust.untrustedFiles": "open",
-    "javascript.inlayHints.parameterNames.enabled": "all",
-    "typescript.inlayHints.parameterNames.enabled": "all",
-    "editor.inlayHints.padding": true,
-    "javascript.inlayHints.variableTypes.suppressWhenTypeMatchesName": false,
-    "typescript.inlayHints.variableTypes.suppressWhenTypeMatchesName": false,
-    "javascript.inlayHints.parameterTypes.enabled": true,
-    "typescript.inlayHints.parameterTypes.enabled": true,
+    // "security.workspace.trust.untrustedFiles": "open",
+    // "javascript.inlayHints.parameterNames.enabled": "all",
+    // "typescript.inlayHints.parameterNames.enabled": "all",
+    // "editor.inlayHints.padding": true,
+    // "javascript.inlayHints.variableTypes.suppressWhenTypeMatchesName": false,
+    // "typescript.inlayHints.variableTypes.suppressWhenTypeMatchesName": false,
+    // "javascript.inlayHints.parameterTypes.enabled": true,
+    // "typescript.inlayHints.parameterTypes.enabled": true,
 
     // Github settings
-    "github.copilot.editor.enableAutoCompletions": true,
-    "git.openRepositoryInParentFolders": "never",
-    "githubPullRequests.pullBranch": "never",
-    "git.confirmSync": false,
+    // "github.copilot.editor.enableAutoCompletions": true,
+    // "git.openRepositoryInParentFolders": "never",
+    // "githubPullRequests.pullBranch": "never",
+    // "git.confirmSync": false,
+    // "github.copilot.nextEditSuggestions.enabled": true,
+    // "editor.inlineSuggest.edits.renderSideBySide": "auto",
     // "github.copilot.preferredAccount": "mehedihassan3",
 
     // Misc Config
@@ -103,7 +104,6 @@
     "[markdown]": {
         "files.trimTrailingWhitespace": false
     },
-    "window.zoomLevel": 0,
 
     // Extensions Config
     "extensions.ignoreRecommendations": true,
@@ -113,7 +113,6 @@
     "typescript.updateImportsOnFileMove.enabled": "always",
     "nxConsole.showNodeVersionOnStartup": false,
     "prettier.tabWidth": 4,
-    "workbench.tree.indent": 15,
     "editor.formatOnSave": true,
     "[javascript]": {
         "editor.formatOnSave": true,
@@ -127,10 +126,10 @@
         "editor.defaultFormatter": "esbenp.prettier-vscode",
         "editor.formatOnSave": true
     },
-    "[html]": {
-        "editor.defaultFormatter": "apility.beautify-blade",
-        "editor.formatOnSave": true
-    },
+    // "[html]": {
+    //     "editor.defaultFormatter": "apility.beautify-blade",
+    //     "editor.formatOnSave": true
+    // },
     "[css]": {
         "editor.defaultFormatter": "esbenp.prettier-vscode",
         "editor.formatOnSave": true
@@ -141,11 +140,21 @@
     "[json]": {
         "editor.defaultFormatter": "vscode.json-language-features"
     },
-
     // Custom CSS and JS Config For VSCode. First Need To Install Extension "Custom CSS and JS Loader"
+    // For macOS, the path is like this: file:///Users/mdmehedihassan/vscode-style/custom-vscode.css
     "vscode_custom_css.imports": [
-        "file:///home/mh/vscode-style/custom-vscode.css",
-        "file:///home/mh/vscode-style/vscode-script.js"
+        "file:///Users/mehedihassan/vscode-style/custom-vscode.css",
+        "file:///Users/mehedihassan/vscode-style/vscode-script.js"
     ],
-    "vim.neovimPath": "/usr/bin/nvim"
+    "githubPullRequests.pullBranch": "never",
+    "workbench.editor.wrapTabs": true,
+    "git.confirmSync": false,
+    "redhat.telemetry.enabled": true,
+    "github.copilot.nextEditSuggestions.enabled": true,
+    "workbench.productIconTheme": "developer-icons",
+    "mdb.mcp.server": "autoStartDisabled",
+    "git.ignoreMissingGitWarning": true,
+    "window.commandCenter": false,
+    "workbench.layoutControl.enabled": false,
+    "vsicons.dontShowNewVersionMessage": true
 }
