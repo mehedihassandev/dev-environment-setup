@@ -1,113 +1,194 @@
-// Zed keymap
+// Zed Keymap
 //
-// For information on binding keys, see the Zed
-// documentation: https://zed.dev/docs/key-bindings
+// Goal:
+// Use VS Code-style shortcuts inside Zed editor.
 //
-// To see the default key bindings run `zed: open default keymap`
-// from the command palette.
+// Docs:
+// https://zed.dev/docs/key-bindings
+//
+// To view Zed default keymap:
+// Command Palette → zed: open default keymap
 [
-  // --- Global / Workspace ---
+  // ---------------------------------------------------------------------------
+  // Global / Workspace
+  // ---------------------------------------------------------------------------
   {
     "context": "Workspace",
     "bindings": {
-      // Sidebar / Explorer Visibility
+      // Toggle sidebar / left dock like VS Code Cmd+E
       "cmd-e": "workspace::ToggleLeftDock",
+
+      // Focus project panel / explorer like VS Code Cmd+1
       "cmd-1": "project_panel::ToggleFocus",
 
-      // Window/Pane Navigation (Vim style)
+      // Quick open / file finder like VS Code Ctrl+P
+      "ctrl-p": "file_finder::Toggle",
+
+      // Git / source control panel
+      "cmd-g g": "workspace::ToggleRightDock",
+
+      // Pane navigation like VS Code Vim navigation
       "cmd-h": "workspace::ActivatePaneLeft",
       "cmd-l": "workspace::ActivatePaneRight",
       "cmd-k": "workspace::ActivatePaneUp",
       "cmd-j": "workspace::ActivatePaneDown",
 
-      // Quick Open / File Finder
-      "ctrl-p": "file_finder::Toggle",
+      // Assistant / Copilot-like panel
+      "alt-c": "assistant::ToggleFocus",
 
-      // Git / Source Control (Toggle Right Dock)
-      "cmd-g g": "workspace::ToggleRightDock",
-
-      // Copilot / Assistant Panel
-      "alt-c": "assistant::ToggleFocus"
-    }
+      // Inline AI edit, similar to VS Code Cmd+Alt+I
+      "cmd-alt-i": "assistant::InlineAssist",
+      "ctrl-enter": "assistant::InlineAssist",
+    },
   },
 
-  // --- File Explorer (Project Panel) ---
-  // Mimics your VS Code "n" for new file, "r" for rename, etc.
+  // ---------------------------------------------------------------------------
+  // Project Panel / File Explorer
+  // ---------------------------------------------------------------------------
   {
     "context": "ProjectPanel && not_editing",
     "bindings": {
+      // Create new file
       "n": "project_panel::NewFile",
+
+      // Create new folder
       "shift-n": "project_panel::NewDirectory",
+
+      // Rename selected file/folder
       "r": "project_panel::Rename",
+
+      // Delete selected file/folder
       "d": "project_panel::Delete",
+
+      // Open selected file/folder
       "enter": "project_panel::Open",
       "space": "project_panel::Open",
 
-      // Standard Clipboard in Explorer
+      // Clipboard actions inside file explorer
       "cmd-c": "project_panel::Copy",
       "cmd-x": "project_panel::Cut",
-      "cmd-v": "project_panel::Paste"
-    }
+      "cmd-v": "project_panel::Paste",
+    },
   },
 
-  // --- Editor (Vim Normal Mode) ---
-  {
-    "context": "Editor && vim_mode == normal",
-    "bindings": {
-      // Tab Switching
-      "tab": "pane::ActivateNextItem",
-      "shift-tab": "pane::ActivatePreviousItem",
-
-      // Hover & Definition
-      "shift-k": "editor::Hover",
-      "space d": "editor::GoToDefinition",
-      "space r": "editor::FindAllReferences",
-
-      // Search
-      "cmd-f": "buffer_search::Deploy",
-      "ctrl-n": "editor::SelectNext", // Add selection to next find match
-
-      // Clear search/highlights (Escape usually handles this, but ensuring consistency)
-      "escape": "editor::Cancel"
-    }
-  },
-
-  // --- Editor (Insert Mode & General) ---
+  // ---------------------------------------------------------------------------
+  // Editor / General Editing
+  // ---------------------------------------------------------------------------
   {
     "context": "Editor",
     "bindings": {
+      // Standard editor shortcuts
       "cmd-a": "editor::SelectAll",
       "cmd-c": "editor::Copy",
       "cmd-v": "editor::Paste",
       "cmd-x": "editor::Cut",
 
-      // Copilot / Inline Assist
-      // Zed uses 'Inline Assist' for editing code with AI
-      "cmd-alt-i": "assistant::InlineAssist",
-      "ctrl-enter": "assistant::InlineAssist"
-    }
+      // Find
+      "cmd-f": "buffer_search::Deploy",
+
+      // Add selection to next match, like VS Code Ctrl+N
+      "ctrl-n": "editor::SelectNext",
+
+      // Inline AI assistant
+      "ctrl-enter": "assistant::InlineAssist",
+    },
   },
 
-  // --- Editor (Suggestions / IntelliSense) ---
-  // Navigate suggestion list with Cmd+J / Cmd+K
+  // ---------------------------------------------------------------------------
+  // Editor / Vim Normal Mode
+  // ---------------------------------------------------------------------------
+  {
+    "context": "Editor && vim_mode == normal",
+    "bindings": {
+      // Switch tabs like your VS Code Vim setup
+      "tab": "pane::ActivateNextItem",
+      "shift-tab": "pane::ActivatePreviousItem",
+
+      // Hover documentation
+      "shift-k": "editor::Hover",
+
+      // Go to definition
+      "space d": "editor::GoToDefinition",
+
+      // Find references
+      "space r": "editor::FindAllReferences",
+
+      // Find inside current file
+      "cmd-f": "buffer_search::Deploy",
+
+      // Add next selection
+      "ctrl-n": "editor::SelectNext",
+
+      // Cancel search / menu / current operation
+      "escape": "editor::Cancel",
+    },
+  },
+
+  // ---------------------------------------------------------------------------
+  // Editor / Vim Visual Mode
+  // ---------------------------------------------------------------------------
+  {
+    "context": "Editor && vim_mode == visual",
+    "bindings": {
+      // Switch tabs while visual mode is active
+      "tab": "pane::ActivateNextItem",
+      "shift-tab": "pane::ActivatePreviousItem",
+
+      // Find
+      "cmd-f": "buffer_search::Deploy",
+
+      // Add next selection
+      "ctrl-n": "editor::SelectNext",
+
+      // Cancel current operation
+      "escape": "editor::Cancel",
+    },
+  },
+
+  // ---------------------------------------------------------------------------
+  // Suggestions / IntelliSense Menu
+  // ---------------------------------------------------------------------------
   {
     "context": "Editor && menu_open",
     "bindings": {
+      // Navigate suggestions with Cmd+J / Cmd+K
       "cmd-j": "menu::SelectNext",
-      "cmd-k": "menu::SelectPrevious"
-    }
+      "cmd-k": "menu::SelectPrevious",
+    },
   },
 
-  // --- Fix for Cmd+K Conflict ---
-  // Zed uses Cmd+K as a prefix (like Cmd+K Cmd+S).
-  // To use Cmd+K for navigation, we must unbind the default chords in the workspace.
+  // ---------------------------------------------------------------------------
+  // Assistant / AI Shortcuts
+  // ---------------------------------------------------------------------------
+  {
+    "context": "Editor",
+    "bindings": {
+      // VS Code Copilot-like shortcuts mapped to Zed assistant behavior
+      "alt-c": "assistant::ToggleFocus",
+      "cmd-alt-i": "assistant::InlineAssist",
+
+      // These are closest Zed equivalents.
+      // Zed may not have direct separate commands for explain/fix/docs/review
+      // like VS Code Copilot Chat.
+      "alt-e": "assistant::InlineAssist",
+      "alt-f": "assistant::InlineAssist",
+      "alt-d": "assistant::InlineAssist",
+      "alt-r": "assistant::InlineAssist",
+    },
+  },
+
+  // ---------------------------------------------------------------------------
+  // Resolve Cmd+K Conflicts
+  // ---------------------------------------------------------------------------
+  // Zed uses Cmd+K as a command prefix by default.
+  // These unbindings allow Cmd+K to work for pane/suggestion navigation.
   {
     "context": "Workspace",
     "bindings": {
       "cmd-k s": null,
       "cmd-k m": null,
       "cmd-k g": null,
-      "cmd-k shift-s": null
-    }
-  }
+      "cmd-k shift-s": null,
+    },
+  },
 ]
