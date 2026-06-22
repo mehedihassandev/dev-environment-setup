@@ -1,0 +1,224 @@
+# ==========================================
+# Terminal & System Settings
+# ==========================================
+
+# Use 256 colors terminal
+set -g default-terminal "tmux-256color"
+
+# Enable RGB/True color support
+set -ag terminal-overrides ",xterm-256color:RGB"
+
+# Enable mouse support for resizing, selecting, and scrolling
+set -g mouse on
+
+# Increase history buffer size (default is 2000)
+set -g history-limit 1000000
+
+# Start indexing windows and panes at 1 instead of 0
+set -g base-index 1
+setw -g pane-base-index 1
+
+# Renumber all windows when any window is closed
+set -g renumber-windows on
+
+# Do not exit from tmux when closing a session (switch to another active session instead)
+set -g detach-on-destroy off
+
+# Use system clipboard
+set -g set-clipboard on
+
+# Position status bar at the bottom
+set -g status-position bottom
+
+# Remove escape time delay for faster response in Vim/Neovim
+set -sg escape-time 10
+
+# Use Vim keybindings in copy mode
+setw -g mode-keys vi
+
+# ==========================================
+# Key Bindings & Navigation (Default & Custom)
+# ==========================================
+
+# Use default tmux prefix Ctrl-b
+set -g prefix C-b
+bind-key C-b send-prefix
+
+# Reload tmux configuration file
+bind R source-file ~/.tmux.conf \; display-message "Config reloaded!"
+
+# Split panes using default keys:
+# - prefix + % (vertical split / side-by-side)
+# - prefix + " (horizontal split / top-and-bottom)
+# Custom alternatives (starting in current pane path):
+bind s split-window -v -c "#{pane_current_path}"
+bind v split-window -h -c "#{pane_current_path}"
+
+# Switch windows using default keys:
+# - prefix + n (next window)
+# - prefix + p (previous window)
+# Custom alternatives (repeatable with prefix):
+bind -r H previous-window
+bind -r L next-window
+
+# Switch to the last active window
+bind ^A last-window
+
+# Rename current window (default is prefix + ,)
+# Custom alternative:
+bind r command-prompt "rename-window %%"
+
+# Choose window from list (default is prefix + w, but sessionx is bound to w)
+# Custom alternative:
+bind '"' choose-window
+
+# Toggle maximizing the current pane (zoom) (default is prefix + z)
+# Custom alternative:
+bind -r m resize-pane -Z
+
+# Switch sessions (default is prefix + s)
+# Custom alternative:
+bind S choose-session
+
+# Toggle pane border status line
+bind P set pane-border-status
+
+# Toggle input synchronization across all panes in the current window
+bind * setw synchronize-panes
+
+# Kill current pane without confirmation (default is prefix + x)
+bind x kill-pane
+
+# Copy mode bindings (Vim style selection and copying)
+bind-key -T copy-mode-vi 'v' send -X begin-selection
+bind-key -T copy-mode-vi 'y' send -X copy-selection
+unbind -T copy-mode-vi MouseDragEnd1Pane # Don't exit copy mode when dragging with mouse
+
+# ==========================================
+# Pane Navigation & Resizing (Non-Conflicting)
+# ==========================================
+
+# Option A: Seamless navigation between Vim and Tmux panes
+# (Requires 'christoomey/vim-tmux-navigator' plugin below)
+# - Ctrl-h selects pane left
+# - Ctrl-j selects pane down
+# - Ctrl-k selects pane up
+# - Ctrl-l selects pane right
+
+# Option B: Fallback tmux pane navigation (with prefix)
+bind-key h select-pane -L
+bind-key j select-pane -D
+bind-key k select-pane -U
+bind-key l select-pane -R
+
+# Option C: Pane resizing (repeatable with prefix)
+# We use prefix + Ctrl + h/j/k/l to resize panes by 5 to avoid conflicts with select-pane.
+bind -r C-h resize-pane -L 5
+bind -r C-j resize-pane -D 5
+bind -r C-k resize-pane -U 5
+bind -r C-l resize-pane -R 5
+
+# Additional large resizes (repeatable with prefix)
+bind -r -T prefix , resize-pane -L 20
+bind -r -T prefix . resize-pane -R 20
+bind -r -T prefix - resize-pane -D 7
+bind -r -T prefix = resize-pane -U 7
+
+# Refresh client
+bind-key ^L refresh-client
+
+# Open command prompt
+bind : command-prompt
+
+# ==========================================
+# TPM Plugins & Configuration
+# ==========================================
+
+# List of plugins managed by TPM
+set -g @plugin 'tmux-plugins/tpm'
+set -g @plugin 'tmux-plugins/tmux-sensible'
+set -g @plugin 'christoomey/vim-tmux-navigator'
+set -g @plugin 'omerxx/tmux-sessionx'
+set -g @plugin 'omerxx/tmux-floax'
+set -g @plugin 'tmux-plugins/tmux-online-status'
+set -g @plugin 'tmux-plugins/tmux-battery'
+set -g @plugin 'tmux-plugins/tmux-resurrect'   # Persist tmux sessions after computer restart
+set -g @plugin 'tmux-plugins/tmux-prefix-highlight'
+set -g @plugin 'tmux-plugins/tmux-yank'
+set -g @plugin 'fcsonline/tmux-thumbs'
+set -g @plugin 'sainnhe/tmux-fzf'
+set -g @plugin 'wfxr/tmux-fzf-url'
+set -g @plugin 'tmux-plugins/tmux-continuum'   # Keep last so autosave hook survives status/theme changes
+
+# Theme - Catppuccin Mocha with rounded window tabs and Nerd Font icons
+set -g @catppuccin_flavor "mocha"
+set -g @catppuccin_window_status_style "rounded"
+set -g @catppuccin_window_number_position "right"
+set -g @catppuccin_window_text "  #W"
+set -g @catppuccin_window_current_text "  #W#{?window_zoomed_flag, 󰁌,}"
+set -g @catppuccin_window_flags "none"
+set -g @catppuccin_application_icon " "
+set -g @catppuccin_status_background "none"
+set -g @catppuccin_status_left_separator ""
+set -g @catppuccin_status_middle_separator ""
+set -g @catppuccin_status_right_separator ""
+set -g @catppuccin_status_connect_separator "no"
+set -g @catppuccin_status_module_text_bg "#{@thm_surface_0}"
+set -g @catppuccin_status_module_text_fg "#{@thm_fg}"
+set -g @catppuccin_directory_text " #{b:pane_current_path}"
+set -g @catppuccin_date_time_text " %H:%M %d-%b-%y"
+
+# Load Catppuccin before composing custom status modules.
+run '~/.tmux/plugins/tmux/catppuccin.tmux'
+
+# Custom Git module for the current pane path.
+set -g @catppuccin_status_window "#[fg=#{@thm_mauve}]#[bg=default]#{@catppuccin_status_left_separator}#[fg=#{@thm_crust},bg=#{@thm_mauve}] #[fg=#{@thm_fg},bg=#{@thm_surface_0}] #I:#W#{?window_zoomed_flag, 󰁌,}#[fg=#{@thm_surface_0}]#[bg=default]#{@catppuccin_status_right_separator}"
+set -g @catppuccin_status_git "#[fg=#{@thm_green}]#[bg=default]#{@catppuccin_status_left_separator}#[fg=#{@thm_crust},bg=#{@thm_green}]󰊢 #[fg=#{@thm_fg},bg=#{@thm_surface_0}] #(bash ~/.tmux/tmux-git-status.sh \"#{pane_current_path}\")#[fg=#{@thm_surface_0}]#[bg=default]#{@catppuccin_status_right_separator}"
+
+# Bottom status layout: session/app left, git/path/host/time right.
+set -g status on
+set -g status-interval 5
+set -g status-justify left
+set -g status-style "bg=default,fg=#cdd6f4"
+set -g status-left-length 240
+set -g status-right-length 100
+set -g status-left "#{E:@catppuccin_status_window} #{E:@catppuccin_status_directory} #{E:@catppuccin_status_git} #{E:@catppuccin_status_application}"
+set -g status-right "#{E:@catppuccin_status_host} #{E:@catppuccin_status_date_time}"
+set -g window-status-separator ""
+set -g window-status-format ""
+set -g window-status-current-format ""
+
+# FZF URL picker settings
+set -g @fzf-url-fzf-options '-p 60%,30% --prompt="   " --border-label=" Open URL "'
+set -g @fzf-url-history-limit '2000'
+
+# Floax floating pane settings
+set -g @floax-width '80%'
+set -g @floax-height '80%'
+set -g @floax-border-color 'magenta'
+set -g @floax-text-color 'blue'
+set -g @floax-bind 'f'
+set -g @floax-change-path 'true'
+
+# Sessionx fuzzy session switcher settings
+set -g @sessionx-bind-zo-new-window 'ctrl-y'
+set -g @sessionx-auto-accept 'off'
+set -g @sessionx-bind 'w'
+set -g @sessionx-window-height '85%'
+set -g @sessionx-window-width '75%'
+set -g @sessionx-zoxide-mode 'on'
+set -g @sessionx-custom-paths-subdirectories 'false'
+set -g @sessionx-filter-current 'false'
+
+# Session Save & Restore settings (tmux-resurrect / tmux-continuum)
+set -g @resurrect-save 'C-s'
+set -g @resurrect-restore 'C-r'
+set -g @resurrect-dir '~/.tmux/resurrect'
+set -g @resurrect-capture-pane-contents 'on'
+set -g @resurrect-strategy-nvim 'session'      # Restore nvim sessions
+set -g @continuum-save-interval '15'           # Automatically save sessions every 15 mins
+set -g @continuum-boot 'on'                    # Start tmux automatically after macOS login
+set -g @continuum-restore 'on'                 # Automatically restore last saved session on startup
+
+# Initialize TMUX plugin manager (keep this line at the very bottom of tmux.conf)
+run '~/.tmux/plugins/tpm/tpm'
