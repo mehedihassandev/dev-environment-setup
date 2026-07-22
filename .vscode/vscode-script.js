@@ -1,87 +1,61 @@
-document.addEventListener("DOMContentLoaded", function () {
-    const checkElement = setInterval(() => {
-        const commandDialog = document.querySelector(".quick-input-widget");
-        if (commandDialog) {
-            // Create an DOM observer to 'listen' for changes in element's attribute.
-            const observer = new MutationObserver((mutations) => {
-                mutations.forEach((mutation) => {
-                    if (
-                        mutation.type === "attributes" &&
-                        mutation.attributeName === "style"
-                    ) {
-                        if (commandDialog.style.display === "none") {
-                            handleEscape();
-                        } else {
-                            // If the .quick-input-widget element (command palette) is in the DOM
-                            // but no inline style display: none, show the backdrop blur.
-                            runMyScript();
-                        }
-                    }
-                });
-            });
+(function() {
+    const BLUR_ID = "command-blur";
+    let workbenchObserver = null;
 
-            observer.observe(commandDialog, { attributes: true });
+    function showOverlay(targetDiv) {
+        if (document.getElementById(BLUR_ID)) return;
 
-            // Clear the interval once the observer is set
-            clearInterval(checkElement);
-        } else {
-            console.log("Command dialog not found yet. Retrying...");
-        }
-    }, 500); // Check every 500ms
+        const overlay = document.createElement("div");
+        overlay.setAttribute("id", BLUR_ID);
 
-    // Execute when command palette was launched.
-    document.addEventListener("keydown", function (event) {
-        if ((event.metaKey || event.ctrlKey) && event.key === "p") {
-            event.preventDefault();
-            runMyScript();
-        } else if (event.key === "Escape" || event.key === "Esc") {
-            event.preventDefault();
-            handleEscape();
-        }
-    });
-
-    // Ensure the escape key event listener is at the document level
-    document.addEventListener(
-        "keydown",
-        function (event) {
-            if (event.key === "Escape" || event.key === "Esc") {
-                handleEscape();
-            }
-        },
-        true,
-    );
-
-    function runMyScript() {
-        const targetDiv = document.querySelector(".monaco-workbench");
-
-        // Remove existing element if it already exists
-        const existingElement = document.getElementById("command-blur");
-        if (existingElement) {
-            existingElement.remove();
-        }
-
-        // Create and configure the new element
-        const newElement = document.createElement("div");
-        newElement.setAttribute("id", "command-blur");
-
-        newElement.addEventListener("click", function () {
-            newElement.remove();
+        // PRODUCTIVITY: Clicking the blur closes the palette
+        overlay.addEventListener("click", () => {
+            // This simulates hitting Escape to close the palette
+            const escEvent = new KeyboardEvent('keydown', { key: 'Escape', keyCode: 27, bubbles: true });
+            document.dispatchEvent(escEvent);
+            overlay.remove();
         });
 
-        // Append the new element as a child of the targetDiv
-        targetDiv.appendChild(newElement);
+        targetDiv.appendChild(overlay);
     }
 
-    function handleEscape() {
-        // Your handleEscape function logic here
-        console.log("handleEscape function triggered");
+    function hideOverlay() {
+        const overlay = document.getElementById(BLUR_ID);
+        if (overlay) overlay.remove();
     }
 
-    // Remove the backdrop blur from the DOM when esc key is pressed.
-    function handleEscape() {
-        const element = document.getElementById("command-blur");
-        if (element) {
-            element.click();
+    function init() {
+        const workbench = document.querySelector(".monaco-workbench");
+        if (!workbench) {
+            setTimeout(init, 500);
+            return;
         }
+
+        // PERFORMANCE: Use MutationObserver to watch for the Palette appearing
+        workbenchObserver = new MutationObserver((mutations) => {
+            const palette = document.querySelector(".quick-input-widget");
+
+            // If palette exists and is not hidden
+            if (palette && palette.style.display !== "none") {
+                showOverlay(workbench);
+            } else {
+                hideOverlay();
+            }
+        });
+
+        // FIXED: subtree: true is necessary because VS Code nests the palette deeply
+        workbenchObserver.observe(workbench, {
+            childList: true,
+            subtree: true,
+            attributes: true,
+            attributeFilter: ['style']
+        });
     }
-});
+
+    // Start initialization
+    if (document.readyState === "complete" || document.readyState === "interactive") {
+        init();
+    } else {
+        document.addEventListener("DOMContentLoaded", init);
+    }
+})();
