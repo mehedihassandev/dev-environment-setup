@@ -1,160 +1,212 @@
 {
-    // Open JSON Editor For Settings
-    "workbench.settings.editor": "json",
-
-    // Cursor
-    "editor.cursorSmoothCaretAnimation": "on",
-    "editor.cursorBlinking": "expand",
-    "editor.cursorStyle": "line",
-    "editor.cursorWidth": 2,
-
-    // Theme Config
-    "workbench.colorTheme": "Flate Arc",
-    "workbench.iconTheme": "symbols",
-    "material-icon-theme.hidesExplorerArrows": true,
-    "vsicons.presets.hideExplorerArrows": true,
-    "workbench.activityBar.location": "top",
-    "workbench.tree.indent": 16,
-
-    // Font Config
-    "editor.fontFamily": "JetBrains Mono, Iosevka Nerd Font, Fira Code, Cascadia Code, Operator Mono",
-    "editor.lineHeight": 1.8,
-    "editor.fontSize": 18,
-    "terminal.integrated.fontSize": 16,
-    "terminal.integrated.fontWeight": "bold",
-    "editor.fontLigatures": true,
-    "workbench.sideBar.location": "right",
-    "window.titleBarStyle": "custom",
-    "window.menuBarVisibility": "toggle",
-    "window.customTitleBarVisibility": "auto",
-    // "editor.lineNumbers": "relative",
-    "window.title": "M O N S T E R ${separator} ${rootNameShort} ${separator} ${activeRepositoryBranchName} ${dirty}",
-    "editor.minimap.enabled": true,
-    "editor.minimap.autohide": "mouseover",
-    "editor.minimap.maxColumn": 50,
-    "editor.minimap.renderCharacters": false,
-    "editor.tabSize": 2,
-    "editor.wordWrap": "on",
-    "editor.wordWrapColumn": 120,
-    "editor.matchBrackets": "always",
-    "editor.lightbulb.enabled": "off",
-    "editor.hover.enabled": "on",
-    "editor.overviewRulerBorder": false,
-    "editor.scrollbar.vertical": "auto",
-    "editor.scrollbar.horizontal": "hidden",
-    "explorer.confirmDelete": false,
-    "editor.stickyScroll.enabled": false,
-    "editor.renderWhitespace": "none",
-    "editor.linkedEditing": true,
-    "editor.bracketPairColorization.enabled": true,
-    "editor.guides.bracketPairs": true,
-    "editor.tokenColorCustomizations": {
-        "textMateRules": [
-            {
-                "scope": [
-                    "comment",
-                    "keyword",
-                    "variable.language",
-                    "entity.other.attribute-name.html",
-                    "entity.other.attribute-name",
-                    "keyword.control",
-                    "storage.type",
-                    "comment",
-                    "comment.block",
-                    "comment.line"
-                ],
-                "settings": {
-                    "fontStyle": "italic"
-                }
-            }
-        ]
+  //================================================================================
+  // Workbench
+  //================================================================================
+  "workbench.settings.editor": "json",
+  "workbench.startupEditor": "none",
+  "workbench.layoutControl.enabled": false,
+  "workbench.sideBar.location": "right",
+  "workbench.tree.indent": 16,
+  "workbench.editor.tabSizing": "fit",
+  "workbench.editor.wrapTabs": true,
+  "explorer.confirmDelete": false,
+  "extensions.ignoreRecommendations": true,
+  "workbench.activityBar.compact": true,
+  "workbench.activityBar.location": "top",
+  "workbench.tree.enableStickyScroll": true,
+  "editor.stickyScroll.scrollWithEditor": false,
+  "editor.hover.delay": 1000, // Only show the popup if you hover for 1 full second
+  "breadcrumbs.enabled": false,
+  "workbench.colorCustomizations": {
+    "[Everforest Pro Dark Cozy]": {
+      "editorGroup.border": "#333B43",
+      "sideBar.border": "#333B43",
+      "activityBar.border": "#333B43",
+      "statusBar.border": "#333B43",
+      "titleBar.border": "#333B43",
+      "editorGroupHeader.tabsBorder": "#333B43",
+      "editorGroupHeader.border": "#333B43",
+      "pane.border": "#333B43",
+      "tab.border": "#333B43",
     },
-    "editor.autoClosingBrackets": "always",
-    "editor.autoClosingComments": "always",
-    "editor.autoClosingDelete": "always",
-    "editor.autoClosingOvertype": "always",
-    "editor.autoClosingQuotes": "always",
-    "editor.bracketPairColorization.independentColorPoolPerBracketType": true,
-    "breadcrumbs.enabled": false,
-    "editor.rulers": [120, 160],
+  },
 
-    // Inlay Hints Config
-    // "security.workspace.trust.untrustedFiles": "open",
-    // "javascript.inlayHints.parameterNames.enabled": "all",
-    // "typescript.inlayHints.parameterNames.enabled": "all",
-    // "editor.inlayHints.padding": true,
-    // "javascript.inlayHints.variableTypes.suppressWhenTypeMatchesName": false,
-    // "typescript.inlayHints.variableTypes.suppressWhenTypeMatchesName": false,
-    // "javascript.inlayHints.parameterTypes.enabled": true,
-    // "typescript.inlayHints.parameterTypes.enabled": true,
+  //================================================================================
+  // Window & Title Bar
+  //================================================================================
+  "window.zoomLevel": 0,
+  "window.commandCenter": false,
+  "window.titleBarStyle": "custom",
+  "window.menuBarVisibility": "toggle",
+  "window.customTitleBarVisibility": "auto",
+  "window.title": "M O N S T E R - ${rootNameShort} ${separator} ${activeRepositoryBranchName}",
 
-    // Github settings
-    // "github.copilot.editor.enableAutoCompletions": true,
-    // "git.openRepositoryInParentFolders": "never",
-    // "githubPullRequests.pullBranch": "never",
-    // "git.confirmSync": false,
-    // "github.copilot.nextEditSuggestions.enabled": true,
-    // "editor.inlineSuggest.edits.renderSideBySide": "auto",
-    // "github.copilot.preferredAccount": "mehedihassan3",
+  //================================================================================
+  // Appearance & Theme
+  //================================================================================
+  "workbench.colorTheme": "Rosé Pine Moon",
+  "workbench.iconTheme": "vscode-icons",
+  "workbench.productIconTheme": "developer-icons",
+  "material-icon-theme.hidesExplorerArrows": true,
+  "workbench.tree.renderIndentGuides": "none",
 
-    // Misc Config
-    "workbench.startupEditor": "none",
-    "explorer.compactFolders": false,
-    "files.trimTrailingWhitespace": true,
-    "[markdown]": {
-        "files.trimTrailingWhitespace": false
-    },
+  //================================================================================
+  // Font & Editor
+  //================================================================================
+  "editor.fontFamily": "JetBrainsMono Nerd Font Mono, Iosevka, Fira Code, Cascadia Code, Operator Mono",
+  "editor.fontSize": 18,
+  "editor.lineHeight": 1.6,
+  "editor.fontLigatures": true,
+  "editor.tabSize": 2,
+  "editor.useTabStops": false,
+  "editor.wordWrap": "bounded",
+  "editor.wordWrapColumn": 100,
+  "editor.renderWhitespace": "none",
+  "editor.linkedEditing": true,
+  "editor.lightbulb.enabled": "off",
+  "editor.hover.enabled": "on",
+  "editor.overviewRulerBorder": false,
+  "editor.scrollbar.vertical": "auto",
+  "editor.scrollbar.horizontal": "hidden",
+  "files.trimTrailingWhitespace": true,
+  "editor.stickyScroll.enabled": false,
+  "explorer.compactFolders": false,
 
-    // Extensions Config
-    "extensions.ignoreRecommendations": true,
+  //================================================================================
+  // Cursor
+  //================================================================================
+  "editor.cursorSmoothCaretAnimation": "on",
+  "editor.cursorBlinking": "expand",
+  "editor.cursorStyle": "line",
+  "editor.cursorWidth": 2,
 
-    // Config Related To Code Formatting
-    "editor.defaultFormatter": "esbenp.prettier-vscode",
-    "typescript.updateImportsOnFileMove.enabled": "always",
-    "nxConsole.showNodeVersionOnStartup": false,
-    "prettier.tabWidth": 4,
+  //================================================================================
+  // Brackets & Guides
+  //================================================================================
+  "editor.matchBrackets": "always",
+  "editor.autoClosingBrackets": "always",
+  "editor.autoClosingComments": "always",
+  "editor.autoClosingDelete": "always",
+  "editor.autoClosingOvertype": "always",
+  "editor.autoClosingQuotes": "always",
+  "editor.bracketPairColorization.enabled": true,
+  "editor.bracketPairColorization.independentColorPoolPerBracketType": true,
+  "editor.guides.bracketPairs": true,
+
+  //================================================================================
+  // Terminal
+  //================================================================================
+  "terminal.integrated.fontSize": 16,
+  "terminal.integrated.fontWeight": "normal",
+
+  //================================================================================
+  // Formatting
+  //================================================================================
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.formatOnSave": true,
+  "prettier.tabWidth": 2,
+  "typescript.updateImportsOnFileMove.enabled": "always",
+  "[javascript]": {
     "editor.formatOnSave": true,
-    "[javascript]": {
-        "editor.formatOnSave": true,
-        "editor.defaultFormatter": "esbenp.prettier-vscode"
-    },
-    "[javascriptreact]": {
-        "editor.formatOnSave": true,
-        "editor.defaultFormatter": "vscode.typescript-language-features"
-    },
-    "[tailwindcss]": {
-        "editor.defaultFormatter": "esbenp.prettier-vscode",
-        "editor.formatOnSave": true
-    },
-    // "[html]": {
-    //     "editor.defaultFormatter": "apility.beautify-blade",
-    //     "editor.formatOnSave": true
-    // },
-    "[css]": {
-        "editor.defaultFormatter": "esbenp.prettier-vscode",
-        "editor.formatOnSave": true
-    },
-    "[jsonc]": {
-        "editor.defaultFormatter": "esbenp.prettier-vscode"
-    },
-    "[json]": {
-        "editor.defaultFormatter": "vscode.json-language-features"
-    },
-    // Custom CSS and JS Config For VSCode. First Need To Install Extension "Custom CSS and JS Loader"
-    // For macOS, the path is like this: file:///Users/mdmehedihassan/vscode-style/custom-vscode.css
-    "vscode_custom_css.imports": [
-        "file:///Users/mehedihassan/vscode-style/custom-vscode.css",
-        "file:///Users/mehedihassan/vscode-style/vscode-script.js"
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+  },
+  "[javascriptreact]": {
+    "editor.formatOnSave": true,
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+  },
+  "[typescript]": {
+    "editor.formatOnSave": true,
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+  },
+  "[typescriptreact]": {
+    "editor.formatOnSave": true,
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+  },
+  "[tailwindcss]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.formatOnSave": true,
+  },
+  "[css]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.formatOnSave": true,
+  },
+  "[jsonc]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+  },
+  "[json]": {
+    "editor.defaultFormatter": "vscode.json-language-features",
+  },
+  "[markdown]": {
+    "files.trimTrailingWhitespace": false,
+  },
+
+  //================================================================================
+  // Git & GitHub
+  //================================================================================
+  "git.confirmSync": false,
+  "githubPullRequests.pullBranch": "never",
+  "github.copilot.nextEditSuggestions.enabled": true,
+  "gitlens.ai.model": "vscode",
+  "gitlens.ai.vscode.model": "copilot:gpt-4.1",
+
+  //================================================================================
+  // Language Specific
+  //================================================================================
+  "editor.tokenColorCustomizations": {
+    "textMateRules": [
+      {
+        "scope": [
+          "comment",
+          "keyword",
+          "variable.language",
+          "entity.other.attribute-name.html",
+          "entity.other.attribute-name",
+          "keyword.control",
+          "storage.type",
+          "comment.block",
+          "comment.line",
+        ],
+        "settings": {
+          "fontStyle": "italic",
+        },
+      },
     ],
-    "githubPullRequests.pullBranch": "never",
-    "workbench.editor.wrapTabs": true,
-    "git.confirmSync": false,
-    "redhat.telemetry.enabled": true,
-    "github.copilot.nextEditSuggestions.enabled": true,
-    "workbench.productIconTheme": "developer-icons",
-    "mdb.mcp.server": "autoStartDisabled",
-    "git.ignoreMissingGitWarning": true,
-    "window.commandCenter": false,
-    "workbench.layoutControl.enabled": false,
-    "vsicons.dontShowNewVersionMessage": true
+  },
+
+  //================================================================================
+  // Misc & Tooling
+  //================================================================================
+  "nxConsole.showNodeVersionOnStartup": false,
+  "redhat.telemetry.enabled": false,
+  "mdb.mcp.server": "prompt",
+  "react-native-tools.showUserTips": false,
+  "geminicodeassist.project": "shaped-vista-hpg6r",
+  "geminicodeassist.displayInlineContextHint": false,
+  "vim.neovimPath": "/opt/homebrew/bin/nvim",
+  "editor.minimap.enabled": true,
+  "editor.minimap.autohide": "mouseover",
+  "editor.minimap.maxColumn": 40,
+  "http.systemCertificatesNode": true,
+  "code-runner.executorMap": {
+    "python": "python3 -u",
+  },
+  "python.defaultInterpreterPath": "/opt/homebrew/bin/python3",
+
+  //================================================================================
+  // Status Bar Customization
+  //================================================================================
+  "workbench.statusBar.feedback.visible": false,
+  "problems.showCurrentInStatus": false,
+
+  //================================================================================
+  // Custom CSS & JS
+  //================================================================================
+  "vscode_custom_css.imports": [
+    "file:///Users/mdmehedihassan/vscode-style/custom-vscode.css",
+    "file:///Users/mdmehedihassan/vscode-style/vscode-script.js",
+  ],
+  "vsicons.dontShowNewVersionMessage": true,
+  "diffEditor.codeLens": true,
+  "workbench.browser.enableChatTools": true,
+  "json.schemaDownload.trustedDomains": ["https://raw.githubusercontent.com"],
 }
